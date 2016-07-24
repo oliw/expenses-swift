@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TableViewController.swift
 //  Expenses
 //
 //  Created by Oliver Wilkie on 7/22/16.
