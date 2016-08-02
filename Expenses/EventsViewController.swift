@@ -11,6 +11,7 @@ import UIKit
 class EventsViewController: UITableViewController {
     
     var events:[Event] = eventsData
+    let eventSegueIdentifier = "ShowEventSegue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,15 +90,14 @@ class EventsViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == eventSegueIdentifier {
+            let destination = segue.destinationViewController as? EventViewController
+            let eventIndex = tableView.indexPathForSelectedRow?.row
+            destination?.event = events[eventIndex!]
+        }
     }
-    */
     
     @IBAction func cancelToEventsViewController(segue:UIStoryboardSegue) {
     }

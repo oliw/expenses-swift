@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22071A4A1D50452A00A9CDD0 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22071A491D50452A00A9CDD0 /* EventViewController.swift */; };
 		2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDAA1D431A83006BFCAE /* AppDelegate.swift */; };
 		2274FDAD1D431A83006BFCAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDAC1D431A83006BFCAE /* ViewController.swift */; };
 		2274FDB01D431A83006BFCAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDAE1D431A83006BFCAE /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22071A491D50452A00A9CDD0 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		2274FDA71D431A83006BFCAE /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274FDAA1D431A83006BFCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2274FDAC1D431A83006BFCAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				2274FDC71D45672D006BFCAE /* Event.swift */,
 				2274FDC91D456767006BFCAE /* SampleData.swift */,
 				2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */,
+				22071A491D50452A00A9CDD0 /* EventViewController.swift */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				2274FDC01D431AD0006BFCAE /* ExpenseModel.swift in Sources */,
 				2274FDC61D4566CC006BFCAE /* EventsViewController.swift in Sources */,
 				2274FDC81D45672D006BFCAE /* Event.swift in Sources */,
+				22071A4A1D50452A00A9CDD0 /* EventViewController.swift in Sources */,
 				2274FDCC1D456C12006BFCAE /* EventDetailsViewController.swift in Sources */,
 				2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */,
 				2274FDCA1D456767006BFCAE /* SampleData.swift in Sources */,
@@ -312,6 +316,7 @@
 				2274FDBE1D431A83006BFCAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
