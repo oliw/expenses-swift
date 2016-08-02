@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		22071A4A1D50452A00A9CDD0 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22071A491D50452A00A9CDD0 /* EventViewController.swift */; };
+		22071A4C1D504CE600A9CDD0 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */; };
+		22071A4E1D504E2D00A9CDD0 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22071A4D1D504E2D00A9CDD0 /* Payment.swift */; };
 		2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDAA1D431A83006BFCAE /* AppDelegate.swift */; };
-		2274FDAD1D431A83006BFCAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDAC1D431A83006BFCAE /* ViewController.swift */; };
 		2274FDB01D431A83006BFCAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDAE1D431A83006BFCAE /* Main.storyboard */; };
 		2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDB11D431A83006BFCAE /* Expenses.xcdatamodeld */; };
 		2274FDB51D431A83006BFCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDB41D431A83006BFCAE /* Assets.xcassets */; };
 		2274FDB81D431A83006BFCAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDB61D431A83006BFCAE /* LaunchScreen.storyboard */; };
-		2274FDC01D431AD0006BFCAE /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDBF1D431AD0006BFCAE /* ExpenseModel.swift */; };
 		2274FDC61D4566CC006BFCAE /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC51D4566CC006BFCAE /* EventsViewController.swift */; };
 		2274FDC81D45672D006BFCAE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC71D45672D006BFCAE /* Event.swift */; };
 		2274FDCA1D456767006BFCAE /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC91D456767006BFCAE /* SampleData.swift */; };
@@ -23,15 +23,15 @@
 
 /* Begin PBXFileReference section */
 		22071A491D50452A00A9CDD0 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		22071A4D1D504E2D00A9CDD0 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		2274FDA71D431A83006BFCAE /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274FDAA1D431A83006BFCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2274FDAC1D431A83006BFCAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2274FDAF1D431A83006BFCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2274FDB21D431A83006BFCAE /* Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expenses.xcdatamodel; sourceTree = "<group>"; };
 		2274FDB41D431A83006BFCAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2274FDB71D431A83006BFCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2274FDB91D431A83006BFCAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2274FDBF1D431AD0006BFCAE /* ExpenseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpenseModel.swift; path = ../ExpenseModel.swift; sourceTree = "<group>"; };
 		2274FDC51D4566CC006BFCAE /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		2274FDC71D45672D006BFCAE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2274FDC91D456767006BFCAE /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
@@ -68,10 +68,8 @@
 		2274FDA91D431A83006BFCAE /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
-				2274FDBF1D431AD0006BFCAE /* ExpenseModel.swift */,
 				2274FDC51D4566CC006BFCAE /* EventsViewController.swift */,
 				2274FDAA1D431A83006BFCAE /* AppDelegate.swift */,
-				2274FDAC1D431A83006BFCAE /* ViewController.swift */,
 				2274FDAE1D431A83006BFCAE /* Main.storyboard */,
 				2274FDB41D431A83006BFCAE /* Assets.xcassets */,
 				2274FDB61D431A83006BFCAE /* LaunchScreen.storyboard */,
@@ -81,6 +79,8 @@
 				2274FDC91D456767006BFCAE /* SampleData.swift */,
 				2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */,
 				22071A491D50452A00A9CDD0 /* EventViewController.swift */,
+				22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */,
+				22071A4D1D504E2D00A9CDD0 /* Payment.swift */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -156,10 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2274FDAD1D431A83006BFCAE /* ViewController.swift in Sources */,
 				2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */,
-				2274FDC01D431AD0006BFCAE /* ExpenseModel.swift in Sources */,
+				22071A4E1D504E2D00A9CDD0 /* Payment.swift in Sources */,
 				2274FDC61D4566CC006BFCAE /* EventsViewController.swift in Sources */,
+				22071A4C1D504CE600A9CDD0 /* PaymentsViewController.swift in Sources */,
 				2274FDC81D45672D006BFCAE /* Event.swift in Sources */,
 				22071A4A1D50452A00A9CDD0 /* EventViewController.swift in Sources */,
 				2274FDCC1D456C12006BFCAE /* EventDetailsViewController.swift in Sources */,

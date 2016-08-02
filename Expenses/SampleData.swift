@@ -9,3 +9,8 @@
 let eventsData = [
     Event(name:"Mexico"),
     Event(name: "Boston") ]
+
+let paymentsData = [
+    Payment(name: "Payment1"),
+    Payment(name: "Payment2")
+]
