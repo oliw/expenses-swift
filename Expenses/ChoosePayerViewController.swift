@@ -1,37 +1,25 @@
 //
-//  PaymentsViewController.swift
+//  PaymentPayerViewController.swift
 //  Expenses
 //
-//  Created by Oliver Wilkie on 8/1/16.
+//  Created by Oliver Wilkie on 8/13/16.
 //  Copyright © 2016 Oliver Wilkie. All rights reserved.
 //
 
 import UIKit
 
-class PaymentsViewController: UITableViewController {
+class ChoosePayerViewController: UITableViewController {
+
+    var people:[Person] = peopleData
     
-    var events:[Event] = eventsData
-    var payments:[Payment] = paymentsData
-
-    @IBOutlet weak var newPaymentButton: UIBarButtonItem!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.parentViewController?.navigationItem.rightBarButtonItem = self.newPaymentButton
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        self.parentViewController?.navigationItem.rightBarButtonItem = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,20 +34,18 @@ class PaymentsViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return paymentsData.count
+        // #warning Incomplete implementation, return the number of rows
+        return people.count
     }
 
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath)
-        let payment = payments[indexPath.row]
-        cell.textLabel?.text = payment.name
-        return cell
-    }
     
-    @IBAction func cancelToPaymentsViewController(segue:UIStoryboardSegue) {
-        // TODO - This feels hacky
-        self.parentViewController?.navigationItem.rightBarButtonItem = self.newPaymentButton
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PayerTableCell", forIndexPath: indexPath)
+
+        let person = people[indexPath.row]
+        cell.textLabel?.text = person.name
+        
+        return cell
     }
 
     /*

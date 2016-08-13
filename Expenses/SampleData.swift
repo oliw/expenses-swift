@@ -14,3 +14,10 @@ let paymentsData = [
     Payment(name: "Payment1"),
     Payment(name: "Payment2")
 ]
+
+let peopleData = [
+    Person(name: "Oli"),
+    Person(name: "Liz"),
+    Person(name: "Bogdan"),
+    Person(name: "Phuong")
+]
