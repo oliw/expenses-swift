@@ -11,6 +11,7 @@ import UIKit
 class ChoosePeopleViewController: UITableViewController {
     
     var people:[Person] = peopleData
+    var checkedPeople = [Bool](count:peopleData.count, repeatedValue: false)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,24 @@ class ChoosePeopleViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonCell", forIndexPath: indexPath)
         cell.textLabel?.text = people[indexPath.row].name
+        if checkedPeople[indexPath.row] {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        checkedPeople[indexPath.row] = true
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.accessoryType = UITableViewCellAccessoryType.None
+        checkedPeople[indexPath.row] = false
     }
 
     /*

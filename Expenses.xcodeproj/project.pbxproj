@@ -14,6 +14,7 @@
 		2219A5E91D5FD2A60097B6E4 /* ChoosePayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */; };
 		2219A5EB1D5FD7490097B6E4 /* ChoosePeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */; };
 		2219A5EE1D5FD8C20097B6E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219A5EC1D5FD8C20097B6E4 /* Main.storyboard */; };
+		2219A5F21D5FE1260097B6E4 /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */; };
 		2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDAA1D431A83006BFCAE /* AppDelegate.swift */; };
 		2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDB11D431A83006BFCAE /* Expenses.xcdatamodeld */; };
 		2274FDB51D431A83006BFCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDB41D431A83006BFCAE /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePayerViewController.swift; sourceTree = "<group>"; };
 		2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePeopleViewController.swift; sourceTree = "<group>"; };
 		2219A5ED1D5FD8C20097B6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewController.swift; sourceTree = "<group>"; };
 		2274FDA71D431A83006BFCAE /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274FDAA1D431A83006BFCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2274FDB21D431A83006BFCAE /* Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expenses.xcdatamodel; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				2219A5E01D5FB2160097B6E4 /* Person.swift */,
 				2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */,
 				2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */,
+				2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				22071A4C1D504CE600A9CDD0 /* PaymentsViewController.swift in Sources */,
 				2219A5E11D5FB2160097B6E4 /* Person.swift in Sources */,
 				2274FDC81D45672D006BFCAE /* Event.swift in Sources */,
+				2219A5F21D5FE1260097B6E4 /* PaymentDetailsViewController.swift in Sources */,
 				22071A4A1D50452A00A9CDD0 /* EventViewController.swift in Sources */,
 				2274FDCC1D456C12006BFCAE /* EventDetailsViewController.swift in Sources */,
 				2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */,
