@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" title="Events" id="avj-qa-miQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aEd-aw-peA">
                             <connections>
-                                <segue destination="Sby-Yl-231" kind="presentation" id="8h4-VI-SEE"/>
+                                <segue destination="Sby-Yl-231" kind="presentation" identifier="AddEventSegue" id="8h4-VI-SEE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
