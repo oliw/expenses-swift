@@ -12,6 +12,8 @@ class ChoosePayerViewController: UITableViewController {
 
     var people:[Person] = peopleData
     
+    var expenseBuilder:NewExpenseBuilder?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -82,15 +84,25 @@ class ChoosePayerViewController: UITableViewController {
         return true
     }
     */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ChoosePeopleSegue" {
+            let selectedIndex = self.tableView.indexPathForSelectedRow
+            let selectedPerson = people[selectedIndex!.row]
+            let destination = segue.destinationViewController as? ChoosePeopleViewController
+            expenseBuilder = expenseBuilder!.personWhoPaid(selectedPerson)
+            destination?.expenseBuilder = expenseBuilder
+        }
     }
-    */
+    
 
 }

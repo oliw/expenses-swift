@@ -100,14 +100,19 @@ class PaymentsViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "NewExpenseSegue" {
+            let parent = self.parentViewController as? EventViewController
+            let destinationNav = segue.destinationViewController as? UINavigationController
+            let destination = destinationNav?.viewControllers[0] as? ChoosePayerViewController
+            destination?.expenseBuilder = NewExpenseBuilder(event: (parent?.event)!, amountPaid: nil, personWhoPaid: nil, peoplePaidFor: [], paidForDescription: nil)
+        }
     }
-    */
 
 }

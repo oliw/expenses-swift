@@ -12,6 +12,9 @@ class ChoosePeopleViewController: UITableViewController {
     
     var people:[Person] = peopleData
     var checkedPeople = [Bool](count:peopleData.count, repeatedValue: false)
+    var checked:[Person] = []
+    
+    var expenseBuilder:NewExpenseBuilder?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,14 +99,20 @@ class ChoosePeopleViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "AddExpenseDetailsSegue" {
+            let destination = segue.destinationViewController as? PaymentDetailsViewController
+            let checked = people.enumerate().filter({(index: Int, person: Person) -> Bool in return true}).map({$0.1})
+            expenseBuilder = expenseBuilder?.peoplePaidFor(checked)
+            destination?.expenseBuilder = expenseBuilder
+        }
+        
     }
-    */
 
 }

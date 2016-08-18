@@ -15,6 +15,7 @@
 		2219A5EB1D5FD7490097B6E4 /* ChoosePeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */; };
 		2219A5EE1D5FD8C20097B6E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219A5EC1D5FD8C20097B6E4 /* Main.storyboard */; };
 		2219A5F21D5FE1260097B6E4 /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */; };
+		22511FDD1D65560400E07886 /* ReviewNewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22511FDC1D65560400E07886 /* ReviewNewExpenseViewController.swift */; };
 		2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDAA1D431A83006BFCAE /* AppDelegate.swift */; };
 		2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDB11D431A83006BFCAE /* Expenses.xcdatamodeld */; };
 		2274FDB51D431A83006BFCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDB41D431A83006BFCAE /* Assets.xcassets */; };
@@ -23,27 +24,32 @@
 		2274FDC81D45672D006BFCAE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC71D45672D006BFCAE /* Event.swift */; };
 		2274FDCA1D456767006BFCAE /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC91D456767006BFCAE /* SampleData.swift */; };
 		2274FDCC1D456C12006BFCAE /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */; };
+		22C67B021D65455D00B3BB54 /* NewExpenseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */; };
+		22C67B041D6545E500B3BB54 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C67B031D6545E500B3BB54 /* Amount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22071A491D50452A00A9CDD0 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
-		22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
-		22071A4D1D504E2D00A9CDD0 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
-		2219A5E01D5FB2160097B6E4 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePayerViewController.swift; sourceTree = "<group>"; };
-		2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePeopleViewController.swift; sourceTree = "<group>"; };
+		22071A491D50452A00A9CDD0 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../EventViewController.swift; sourceTree = "<group>"; };
+		22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsViewController.swift; path = ../PaymentsViewController.swift; sourceTree = "<group>"; };
+		22071A4D1D504E2D00A9CDD0 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Payment.swift; path = ../Payment.swift; sourceTree = "<group>"; };
+		2219A5E01D5FB2160097B6E4 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
+		2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePayerViewController.swift; path = ../ChoosePayerViewController.swift; sourceTree = "<group>"; };
+		2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePeopleViewController.swift; path = ../ChoosePeopleViewController.swift; sourceTree = "<group>"; };
 		2219A5ED1D5FD8C20097B6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewController.swift; sourceTree = "<group>"; };
+		2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentDetailsViewController.swift; path = ../PaymentDetailsViewController.swift; sourceTree = "<group>"; };
+		22511FDC1D65560400E07886 /* ReviewNewExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewNewExpenseViewController.swift; sourceTree = "<group>"; };
 		2274FDA71D431A83006BFCAE /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274FDAA1D431A83006BFCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2274FDB21D431A83006BFCAE /* Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expenses.xcdatamodel; sourceTree = "<group>"; };
 		2274FDB41D431A83006BFCAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2274FDB71D431A83006BFCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2274FDB91D431A83006BFCAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2274FDC51D4566CC006BFCAE /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
-		2274FDC71D45672D006BFCAE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		2274FDC51D4566CC006BFCAE /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
+		2274FDC71D45672D006BFCAE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = ../Event.swift; sourceTree = "<group>"; };
 		2274FDC91D456767006BFCAE /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
-		2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailsViewController.swift; path = ../EventDetailsViewController.swift; sourceTree = "<group>"; };
+		22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewExpenseBuilder.swift; sourceTree = "<group>"; };
+		22C67B031D6545E500B3BB54 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22511FDE1D65616F00E07886 /* NewExpense */ = {
+			isa = PBXGroup;
+			children = (
+				2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */,
+				2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */,
+				2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */,
+				22511FDC1D65560400E07886 /* ReviewNewExpenseViewController.swift */,
+			);
+			name = NewExpense;
+			sourceTree = "<group>";
+		};
 		2274FD9E1D431A83006BFCAE = {
 			isa = PBXGroup;
 			children = (
@@ -76,25 +93,49 @@
 		2274FDA91D431A83006BFCAE /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				22D46B9B1D64BCA1003BAB73 /* Controllers */,
+				22D46B9A1D64BC8B003BAB73 /* Views */,
+				22D46B981D64BC38003BAB73 /* Models */,
 				2219A5EC1D5FD8C20097B6E4 /* Main.storyboard */,
-				2274FDC51D4566CC006BFCAE /* EventsViewController.swift */,
 				2274FDAA1D431A83006BFCAE /* AppDelegate.swift */,
 				2274FDB41D431A83006BFCAE /* Assets.xcassets */,
 				2274FDB61D431A83006BFCAE /* LaunchScreen.storyboard */,
 				2274FDB91D431A83006BFCAE /* Info.plist */,
 				2274FDB11D431A83006BFCAE /* Expenses.xcdatamodeld */,
-				2274FDC71D45672D006BFCAE /* Event.swift */,
 				2274FDC91D456767006BFCAE /* SampleData.swift */,
-				2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */,
-				22071A491D50452A00A9CDD0 /* EventViewController.swift */,
-				22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */,
-				22071A4D1D504E2D00A9CDD0 /* Payment.swift */,
-				2219A5E01D5FB2160097B6E4 /* Person.swift */,
-				2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */,
-				2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */,
-				2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */,
 			);
 			path = Expenses;
+			sourceTree = "<group>";
+		};
+		22D46B981D64BC38003BAB73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22071A4D1D504E2D00A9CDD0 /* Payment.swift */,
+				2219A5E01D5FB2160097B6E4 /* Person.swift */,
+				2274FDC71D45672D006BFCAE /* Event.swift */,
+				22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */,
+				22C67B031D6545E500B3BB54 /* Amount.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22D46B9A1D64BC8B003BAB73 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		22D46B9B1D64BCA1003BAB73 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22511FDE1D65616F00E07886 /* NewExpense */,
+				22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */,
+				2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */,
+				22071A491D50452A00A9CDD0 /* EventViewController.swift */,
+				2274FDC51D4566CC006BFCAE /* EventsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +211,11 @@
 			files = (
 				2219A5EB1D5FD7490097B6E4 /* ChoosePeopleViewController.swift in Sources */,
 				2219A5E91D5FD2A60097B6E4 /* ChoosePayerViewController.swift in Sources */,
+				22511FDD1D65560400E07886 /* ReviewNewExpenseViewController.swift in Sources */,
 				2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */,
 				22071A4E1D504E2D00A9CDD0 /* Payment.swift in Sources */,
 				2274FDC61D4566CC006BFCAE /* EventsViewController.swift in Sources */,
+				22C67B041D6545E500B3BB54 /* Amount.swift in Sources */,
 				22071A4C1D504CE600A9CDD0 /* PaymentsViewController.swift in Sources */,
 				2219A5E11D5FB2160097B6E4 /* Person.swift in Sources */,
 				2274FDC81D45672D006BFCAE /* Event.swift in Sources */,
@@ -180,6 +223,7 @@
 				22071A4A1D50452A00A9CDD0 /* EventViewController.swift in Sources */,
 				2274FDCC1D456C12006BFCAE /* EventDetailsViewController.swift in Sources */,
 				2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */,
+				22C67B021D65455D00B3BB54 /* NewExpenseBuilder.swift in Sources */,
 				2274FDCA1D456767006BFCAE /* SampleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

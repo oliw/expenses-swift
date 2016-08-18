@@ -177,7 +177,7 @@
                     <toolbarItems>
                         <barButtonItem systemItem="add" id="bRV-pX-C9X">
                             <connections>
-                                <segue destination="hUT-0v-5qe" kind="presentation" id="Ffu-9O-Yt5"/>
+                                <segue destination="hUT-0v-5qe" kind="presentation" identifier="NewExpenseSegue" id="Ffu-9O-Yt5"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -216,7 +216,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="dta-Ak-6MC" kind="show" id="9pa-fC-gRq"/>
+                                    <segue destination="dta-Ak-6MC" kind="show" identifier="ChoosePeopleSegue" id="9pa-fC-gRq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -274,7 +274,7 @@
                     <navigationItem key="navigationItem" title="People" id="xRv-Fh-py6">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="qPn-FU-9vv">
                             <connections>
-                                <segue destination="Tij-au-bFH" kind="show" id="yZN-9f-pP1"/>
+                                <segue destination="Tij-au-bFH" kind="show" identifier="AddExpenseDetailsSegue" id="yZN-9f-pP1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -339,7 +339,7 @@
                     <navigationItem key="navigationItem" title="Details" id="YPg-4h-RD1">
                         <barButtonItem key="rightBarButtonItem" title="Review" id="bm5-tY-dlh">
                             <connections>
-                                <segue destination="VM7-fb-OL3" kind="show" id="gwz-vE-3dx"/>
+                                <segue destination="VM7-fb-OL3" kind="show" identifier="ReviewExpenseSegue" id="gwz-vE-3dx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -354,7 +354,7 @@
         <!--Review-->
         <scene sceneID="dWo-oK-0DD">
             <objects>
-                <viewController id="VM7-fb-OL3" sceneMemberID="viewController">
+                <viewController id="VM7-fb-OL3" customClass="ReviewNewExpenseViewController" customModule="Expenses" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BfV-CQ-DFF"/>
                         <viewControllerLayoutGuide type="bottom" id="FOd-72-ral"/>

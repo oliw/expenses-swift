@@ -10,6 +10,8 @@ import UIKit
 
 class PaymentDetailsViewController: UITableViewController, UITextFieldDelegate {
 
+    var expenseBuilder:NewExpenseBuilder?
+    
     @IBOutlet weak var amountTextField: UITextField!
     
     override func viewDidLoad() {
@@ -37,5 +39,20 @@ class PaymentDetailsViewController: UITableViewController, UITextFieldDelegate {
         default:
             return string.isEmpty
         }
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "ReviewExpenseSegue" {
+            let destination = segue.destinationViewController as? ReviewNewExpenseViewController
+            let amountPaid = Amount(integerPart: 12, decimalPart: 12)
+            expenseBuilder = expenseBuilder?.amountPaid(amountPaid)
+            destination?.expenseBuilder = expenseBuilder
+        }
+        
     }
 }

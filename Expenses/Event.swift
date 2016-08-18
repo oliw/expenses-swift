@@ -9,7 +9,7 @@
 import UIKit
 
 struct Event {
-    var name: String
+    let name: String
     
     init(name: String) {
         self.name = name
