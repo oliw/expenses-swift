@@ -21,7 +21,6 @@
 		2274FDB51D431A83006BFCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDB41D431A83006BFCAE /* Assets.xcassets */; };
 		2274FDB81D431A83006BFCAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDB61D431A83006BFCAE /* LaunchScreen.storyboard */; };
 		2274FDC61D4566CC006BFCAE /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC51D4566CC006BFCAE /* EventsViewController.swift */; };
-		2274FDC81D45672D006BFCAE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC71D45672D006BFCAE /* Event.swift */; };
 		2274FDCA1D456767006BFCAE /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC91D456767006BFCAE /* SampleData.swift */; };
 		2274FDCC1D456C12006BFCAE /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */; };
 		22C67B021D65455D00B3BB54 /* NewExpenseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */; };
@@ -29,27 +28,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22071A491D50452A00A9CDD0 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ../EventViewController.swift; sourceTree = "<group>"; };
-		22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsViewController.swift; path = ../PaymentsViewController.swift; sourceTree = "<group>"; };
+		22071A491D50452A00A9CDD0 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = Expenses/EventViewController.swift; sourceTree = SOURCE_ROOT; };
+		22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsViewController.swift; path = Expenses/PaymentsViewController.swift; sourceTree = SOURCE_ROOT; };
 		22071A4D1D504E2D00A9CDD0 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Payment.swift; path = ../Payment.swift; sourceTree = "<group>"; };
 		2219A5E01D5FB2160097B6E4 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
 		2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePayerViewController.swift; path = ../ChoosePayerViewController.swift; sourceTree = "<group>"; };
 		2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePeopleViewController.swift; path = ../ChoosePeopleViewController.swift; sourceTree = "<group>"; };
 		2219A5ED1D5FD8C20097B6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentDetailsViewController.swift; path = ../PaymentDetailsViewController.swift; sourceTree = "<group>"; };
-		22511FDC1D65560400E07886 /* ReviewNewExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewNewExpenseViewController.swift; sourceTree = "<group>"; };
+		22511FDC1D65560400E07886 /* ReviewNewExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewNewExpenseViewController.swift; path = ../ReviewNewExpenseViewController.swift; sourceTree = "<group>"; };
 		2274FDA71D431A83006BFCAE /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274FDAA1D431A83006BFCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2274FDB21D431A83006BFCAE /* Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expenses.xcdatamodel; sourceTree = "<group>"; };
 		2274FDB41D431A83006BFCAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2274FDB71D431A83006BFCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2274FDB91D431A83006BFCAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2274FDC51D4566CC006BFCAE /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = ../EventsViewController.swift; sourceTree = "<group>"; };
-		2274FDC71D45672D006BFCAE /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = ../Event.swift; sourceTree = "<group>"; };
+		2274FDC51D4566CC006BFCAE /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = Expenses/EventsViewController.swift; sourceTree = SOURCE_ROOT; };
 		2274FDC91D456767006BFCAE /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
-		2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailsViewController.swift; path = ../EventDetailsViewController.swift; sourceTree = "<group>"; };
-		22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewExpenseBuilder.swift; sourceTree = "<group>"; };
-		22C67B031D6545E500B3BB54 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
+		2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailsViewController.swift; path = Expenses/EventDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewExpenseBuilder.swift; path = Expenses/NewExpenseBuilder.swift; sourceTree = SOURCE_ROOT; };
+		22C67B031D6545E500B3BB54 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = ../Amount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +110,6 @@
 			children = (
 				22071A4D1D504E2D00A9CDD0 /* Payment.swift */,
 				2219A5E01D5FB2160097B6E4 /* Person.swift */,
-				2274FDC71D45672D006BFCAE /* Event.swift */,
 				22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */,
 				22C67B031D6545E500B3BB54 /* Amount.swift */,
 			);
@@ -218,7 +215,6 @@
 				22C67B041D6545E500B3BB54 /* Amount.swift in Sources */,
 				22071A4C1D504CE600A9CDD0 /* PaymentsViewController.swift in Sources */,
 				2219A5E11D5FB2160097B6E4 /* Person.swift in Sources */,
-				2274FDC81D45672D006BFCAE /* Event.swift in Sources */,
 				2219A5F21D5FE1260097B6E4 /* PaymentDetailsViewController.swift in Sources */,
 				22071A4A1D50452A00A9CDD0 /* EventViewController.swift in Sources */,
 				2274FDCC1D456C12006BFCAE /* EventDetailsViewController.swift in Sources */,
