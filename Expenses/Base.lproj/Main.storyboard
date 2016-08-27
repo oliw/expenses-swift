@@ -150,7 +150,7 @@
                     <navigationItem key="navigationItem" title="People" id="jAv-iX-XIp">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="7ig-Yv-7AN">
                             <connections>
-                                <segue destination="8Ae-8l-KDm" kind="unwind" unwindAction="saveEventDetail:" id="q6j-Xd-yR9"/>
+                                <segue destination="8Ae-8l-KDm" kind="unwind" unwindAction="saveEventDetail:" id="43b-3i-V9m"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

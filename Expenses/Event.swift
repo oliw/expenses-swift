@@ -13,11 +13,11 @@ import CoreData
 class Event: NSManagedObject {
 
     func getNumberOfPeople() -> Int {
-        return self.people.count
+        return self.people!.count
     }
     
     func getPeople() -> [Person] {
-        return self.people.allObjects as! [Person]
+        return self.people!.allObjects as! [Person]
     }
     
     func addPerson(person:Person) -> Void {

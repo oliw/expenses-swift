@@ -15,6 +15,6 @@ import CoreData
 extension Event {
 
     @NSManaged var name: String?
-    @NSManaged var people: NSSet
+    @NSManaged var people: NSSet?
 
 }
