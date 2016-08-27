@@ -24,6 +24,7 @@ class EventViewController: UITabBarController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationItem.title = event?.name
     }
 }
