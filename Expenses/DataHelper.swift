@@ -18,19 +18,28 @@ class DataHelper {
     }
     
     func seedDataStore() {
-        let events = [
-            (name: "Mexico", bar: 1),
-            (name: "Boston", bar: 1)
-        ]
-        for event in events {
-            let newEvent = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: context) as! Event
-            newEvent.name = event.name
-        }
-        
+        seedMexicoEvent()
+    }
+    
+    private func seedMexicoEvent() {
+        // 1. Mexico Event
+        let newEvent = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: context) as! Event
+        newEvent.name = "Mexico"
+        // 2. Mexico People
+        let newPerson = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: context) as! Person
+        newPerson.name = "Oli"
+        let newPerson2 = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: context) as! Person
+        newPerson2.name = "Liz"
+        let newPerson3 = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: context) as! Person
+        newPerson3.name = "Bogdan"
+        newEvent.addPerson(newPerson)
+        newEvent.addPerson(newPerson2)
+        newEvent.addPerson(newPerson3)
+        // 3. Mexico Expenses
         do {
             try context.save()
         } catch _ {}
-        return  
+        return
     }
     
 }
