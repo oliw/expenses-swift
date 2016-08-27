@@ -10,7 +10,8 @@ import UIKit
 
 class ChoosePayerViewController: UITableViewController {
 
-    var people:[Person] = []
+    var expense:Expense?
+    var event:Event?
     
     var expenseBuilder:NewExpenseBuilder?
     
@@ -37,16 +38,14 @@ class ChoosePayerViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return people.count
+        return event!.getNumberOfPeople()
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PayerTableCell", forIndexPath: indexPath)
-
-        let person = people[indexPath.row]
+        let person = event!.getPeople()[indexPath.row]
         cell.textLabel?.text = person.name
-        
         return cell
     }
 
@@ -97,10 +96,11 @@ class ChoosePayerViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "ChoosePeopleSegue" {
             let selectedIndex = self.tableView.indexPathForSelectedRow
-            let selectedPerson = people[selectedIndex!.row]
+            let selectedPerson = self.event?.getPeople()[selectedIndex!.row]
+            self.expense!.payer = selectedPerson
             let destination = segue.destinationViewController as? ChoosePeopleViewController
-            expenseBuilder = expenseBuilder!.personWhoPaid(selectedPerson)
-            destination?.expenseBuilder = expenseBuilder
+            destination?.expense = self.expense
+            destination?.event = self.event
         }
     }
     

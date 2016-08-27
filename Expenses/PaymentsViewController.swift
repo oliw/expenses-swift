@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PaymentsViewController: UITableViewController {
     
@@ -121,8 +122,14 @@ class PaymentsViewController: UITableViewController {
         if segue.identifier == "NewExpenseSegue" {
             let parent = self.parentViewController as? EventViewController
             let destinationNav = segue.destinationViewController as? UINavigationController
-            let destination = destinationNav?.viewControllers[0] as? ChoosePayerViewController
-            destination?.expenseBuilder = NewExpenseBuilder(event: (parent?.event)!, amountPaid: nil, personWhoPaid: nil, peoplePaidFor: [], paidForDescription: nil)
+            let destination = destinationNav?.topViewController as? ChoosePayerViewController
+            
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext
+            let entity = NSEntityDescription.entityForName("Expense", inManagedObjectContext: managedContext)
+            let newExpense = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Expense
+            destination?.expense = newExpense
+            destination?.event = event
         }
     }
 

@@ -10,6 +10,9 @@ import UIKit
 
 class ChoosePeopleViewController: UITableViewController {
     
+    var event:Event?
+    var expense:Expense?
+    
     var people:[Person] = []
     var checkedPeople = [Bool](count:peopleData.count, repeatedValue: false)
     var checked:[Person] = []
