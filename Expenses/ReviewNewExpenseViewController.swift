@@ -10,7 +10,8 @@ import UIKit
 
 class ReviewNewExpenseViewController: UIViewController {
     
-    var expenseBuilder:NewExpenseBuilder?
+    var event:Event?
+    var expense:Expense?
 
     override func viewDidLoad() {
         super.viewDidLoad()

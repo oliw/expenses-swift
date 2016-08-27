@@ -12,9 +12,7 @@ class ChoosePayerViewController: UITableViewController {
 
     var expense:Expense?
     var event:Event?
-    
-    var expenseBuilder:NewExpenseBuilder?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 

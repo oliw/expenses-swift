@@ -13,20 +13,25 @@ class ChoosePeopleViewController: UITableViewController {
     var event:Event?
     var expense:Expense?
     
-    var people:[Person] = []
-    var checkedPeople = [Bool](count:0, repeatedValue: false)
-    var checked:[Person] = []
+    var checkedPeople = [Person]()
     
-    var expenseBuilder:NewExpenseBuilder?
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        checkedPeople.removeAll()
+        expense?.getParticipants().forEach({person -> Void in
+            checkedPeople.append(person)
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,13 +46,14 @@ class ChoosePeopleViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return people.count
+        return event!.getPeople().count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonCell", forIndexPath: indexPath)
-        cell.textLabel?.text = people[indexPath.row].name
-        if checkedPeople[indexPath.row] {
+        let person = event!.getPeople()[indexPath.row]
+        cell.textLabel?.text = person.name
+        if (checkedPeople.contains(person)) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         } else {
             cell.accessoryType = UITableViewCellAccessoryType.None
@@ -57,14 +63,20 @@ class ChoosePeopleViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let person = event!.getPeople()[indexPath.row]
         cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
-        checkedPeople[indexPath.row] = true
+        if !checkedPeople.contains(person) {
+            checkedPeople.append(person)
+        }
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let person = event!.getPeople()[indexPath.row]
         cell?.accessoryType = UITableViewCellAccessoryType.None
-        checkedPeople[indexPath.row] = false
+        if let x = checkedPeople.indexOf(person) {
+            checkedPeople.removeAtIndex(x)
+        }
     }
 
     /*
@@ -111,9 +123,9 @@ class ChoosePeopleViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "AddExpenseDetailsSegue" {
             let destination = segue.destinationViewController as? PaymentDetailsViewController
-            let checked = people.enumerate().filter({(index: Int, person: Person) -> Bool in return true}).map({$0.1})
-            expenseBuilder = expenseBuilder?.peoplePaidFor(checked)
-            destination?.expenseBuilder = expenseBuilder
+            self.expense?.replaceParticipants(checkedPeople)
+            destination?.event = self.event
+            destination?.expense = self.expense
         }
         
     }

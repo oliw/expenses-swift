@@ -10,7 +10,8 @@ import UIKit
 
 class PaymentDetailsViewController: UITableViewController, UITextFieldDelegate {
 
-    var expenseBuilder:NewExpenseBuilder?
+    var event:Event?
+    var expense:Expense?
     
     @IBOutlet weak var amountTextField: UITextField!
     
@@ -50,8 +51,8 @@ class PaymentDetailsViewController: UITableViewController, UITextFieldDelegate {
         if segue.identifier == "ReviewExpenseSegue" {
             let destination = segue.destinationViewController as? ReviewNewExpenseViewController
             let amountPaid = Amount(integerPart: 12, decimalPart: 12)
-            expenseBuilder = expenseBuilder?.amountPaid(amountPaid)
-            destination?.expenseBuilder = expenseBuilder
+            destination?.event = self.event
+            destination?.expense = self.expense
         }
         
     }

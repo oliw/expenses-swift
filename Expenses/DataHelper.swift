@@ -40,9 +40,9 @@ class DataHelper {
         newExpense.details = "Water Taxi Ticket"
         newExpense.date = DateHelper.fromIso8601("2016-08-27T22:54:57+00:00")
         newExpense.payer = newPerson
-        newExpense.addParticipant(newPerson)
-        newExpense.addParticipant(newPerson2)
-        newExpense.addParticipant(newPerson3)
+        newExpense.addParticipantsObject(newPerson)
+        newExpense.addParticipantsObject(newPerson2)
+        newExpense.addParticipantsObject(newPerson3)
         newExpense.amount_integer_part = 10
         newExpense.amount_fraction_part = 0
         newEvent.addExpense(newExpense)

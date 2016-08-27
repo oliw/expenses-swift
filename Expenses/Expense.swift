@@ -20,12 +20,13 @@ class Expense: NSManagedObject {
         return self.participants!.allObjects as! [Person]
     }
     
-    func removeParticipant(person:Person) -> Void {
-        self.mutableSetValueForKey("participants").removeObject(person)
-    }
+    @NSManaged func addParticipants(value:Set<Person>)
     
-    func addParticipant(person:Person) -> Void {
-        self.mutableSetValueForKey("participants").addObject(person)
+    @NSManaged func addParticipantsObject(value:Person)
+    @NSManaged func removeParticipantsObject(value:Person)
+    
+    func replaceParticipants(people:[Person]) -> Void {
+        self.mutableSetValueForKey("participants").removeAllObjects()
+        addParticipants(Set(people))
     }
-
 }
