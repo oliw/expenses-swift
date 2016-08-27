@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="727" y="305"/>
         </scene>
-        <!--Add Event-->
+        <!--Event Details-->
         <scene sceneID="XsN-ot-LBs">
             <objects>
                 <tableViewController id="9bi-nj-wUY" customClass="EventDetailsViewController" customModule="Expenses" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,15 +86,15 @@
                             <outlet property="delegate" destination="9bi-nj-wUY" id="soq-wX-j2L"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Event" id="Ttz-0E-s1J">
+                    <navigationItem key="navigationItem" title="Event Details" id="Ttz-0E-s1J">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="q7L-39-5nE">
                             <connections>
                                 <segue destination="wHU-c6-JK2" kind="unwind" unwindAction="cancelToEventsViewController:" id="aRh-cj-0Ty"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="bbq-Wh-Eto">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="Ttt-kT-GGB">
                             <connections>
-                                <segue destination="wHU-c6-JK2" kind="unwind" identifier="SaveEventDetail" unwindAction="saveEventDetail:" id="Y93-yd-qqP"/>
+                                <segue destination="cTd-Ds-RKX" kind="show" id="T6z-8P-flY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -106,6 +106,50 @@
                 <exit id="wHU-c6-JK2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2222" y="305"/>
+        </scene>
+        <!--People-->
+        <scene sceneID="zZG-I5-4CH">
+            <objects>
+                <tableViewController id="cTd-Ds-RKX" customClass="EventPeopleDetailsViewController" customModule="Expenses" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="knD-Tj-9di">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IPi-M2-5sj">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IPi-M2-5sj" id="OyP-Ng-JwE">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cTd-Ds-RKX" id="mEq-VC-wDF"/>
+                            <outlet property="delegate" destination="cTd-Ds-RKX" id="PlE-wt-BkV"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ycm-SM-uIY"/>
+                        <barButtonItem systemItem="add" id="xmJ-XE-obl">
+                            <connections>
+                                <action selector="addPerson:" destination="cTd-Ds-RKX" id="AUC-mK-hY0"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="People" id="jAv-iX-XIp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7ig-Yv-7AN">
+                            <connections>
+                                <segue destination="8Ae-8l-KDm" kind="unwind" unwindAction="saveEventDetail:" id="q6j-Xd-yR9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKN-dA-hkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8Ae-8l-KDm" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2852" y="305"/>
         </scene>
         <!--Events-->
         <scene sceneID="zkE-PU-kFe">
@@ -440,13 +484,17 @@
         <!--Navigation Controller-->
         <scene sceneID="4SH-Ef-m3u">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sby-Yl-231" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Sby-Yl-231" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uoP-Po-Jg8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="sLi-Q9-FlA">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="9bi-nj-wUY" kind="relationship" relationship="rootViewController" id="O39-kV-57u"/>
                     </connections>

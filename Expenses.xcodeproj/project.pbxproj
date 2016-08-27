@@ -28,6 +28,7 @@
 		227BBE401D71495D0033EE11 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE3A1D71495D0033EE11 /* Payment.swift */; };
 		227BBE411D71495D0033EE11 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE3B1D71495D0033EE11 /* Person.swift */; };
 		227BBE441D72042D0033EE11 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE431D72042D0033EE11 /* DataHelper.swift */; };
+		227BBE461D721E5A0033EE11 /* EventPeopleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE451D721E5A0033EE11 /* EventPeopleDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		227BBE3A1D71495D0033EE11 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Payment.swift; path = Expenses/Payment.swift; sourceTree = SOURCE_ROOT; };
 		227BBE3B1D71495D0033EE11 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Expenses/Person.swift; sourceTree = SOURCE_ROOT; };
 		227BBE431D72042D0033EE11 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		227BBE451D721E5A0033EE11 /* EventPeopleDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPeopleDetailsViewController.swift; path = Expenses/EventPeopleDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		22D46B9B1D64BCA1003BAB73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				227BBE451D721E5A0033EE11 /* EventPeopleDetailsViewController.swift */,
 				227BBE261D7148710033EE11 /* EventDetailsViewController.swift */,
 				227BBE271D7148710033EE11 /* EventsViewController.swift */,
 				227BBE281D7148710033EE11 /* EventViewController.swift */,
@@ -239,6 +242,7 @@
 				227BBE3E1D71495D0033EE11 /* Event+CoreDataProperties.swift in Sources */,
 				227BBE2B1D7148710033EE11 /* EventsViewController.swift in Sources */,
 				227BBE411D71495D0033EE11 /* Person.swift in Sources */,
+				227BBE461D721E5A0033EE11 /* EventPeopleDetailsViewController.swift in Sources */,
 				227BBE3C1D71495D0033EE11 /* Amount.swift in Sources */,
 				227BBE3D1D71495D0033EE11 /* Event.swift in Sources */,
 			);
