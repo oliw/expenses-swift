@@ -98,6 +98,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="nameTextField" destination="qdb-s2-T8Z" id="Jvt-lP-wup"/>
                     </connections>
