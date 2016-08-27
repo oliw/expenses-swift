@@ -94,7 +94,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Ttt-kT-GGB">
                             <connections>
-                                <segue destination="cTd-Ds-RKX" kind="show" id="T6z-8P-flY"/>
+                                <segue destination="cTd-Ds-RKX" kind="show" identifier="addPeopleSegue" id="T6z-8P-flY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -116,12 +116,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IPi-M2-5sj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="peopleCell" textLabel="XDx-Za-WkW" style="IBUITableViewCellStyleDefault" id="IPi-M2-5sj">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IPi-M2-5sj" id="OyP-Ng-JwE">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XDx-Za-WkW">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

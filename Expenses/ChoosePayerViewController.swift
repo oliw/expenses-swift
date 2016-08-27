@@ -10,7 +10,7 @@ import UIKit
 
 class ChoosePayerViewController: UITableViewController {
 
-    var people:[Person] = peopleData
+    var people:[Person] = []
     
     var expenseBuilder:NewExpenseBuilder?
     

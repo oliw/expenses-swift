@@ -1,5 +1,5 @@
 //
-//  Event+CoreDataProperties.swift
+//  Person+CoreDataProperties.swift
 //  Expenses
 //
 //  Created by Oliver Wilkie on 8/27/16.
@@ -12,9 +12,8 @@
 import Foundation
 import CoreData
 
-extension Event {
+extension Person {
 
     @NSManaged var name: String?
-    @NSManaged var people: NSSet
 
 }

@@ -12,6 +12,20 @@ import CoreData
 
 class Event: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    func getNumberOfPeople() -> Int {
+        return self.people.count
+    }
+    
+    func getPeople() -> [Person] {
+        return self.people.allObjects as! [Person]
+    }
+    
+    func addPerson(person:Person) -> Void {
+        self.mutableSetValueForKey("people").addObject(person)
+    }
+    
+    func removePerson(person:Person) -> Void {
+        self.mutableSetValueForKey("people").removeObject(person)
+    }
 
 }
