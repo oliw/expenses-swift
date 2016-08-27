@@ -12,6 +12,20 @@ import CoreData
 
 class Expense: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    func getNumberOfParticipants() -> Int {
+        return self.participants!.count
+    }
+    
+    func getParticipants() -> [Person] {
+        return self.participants!.allObjects as! [Person]
+    }
+    
+    func removeParticipant(person:Person) -> Void {
+        self.mutableSetValueForKey("participants").removeObject(person)
+    }
+    
+    func addParticipant(person:Person) -> Void {
+        self.mutableSetValueForKey("participants").addObject(person)
+    }
 
 }

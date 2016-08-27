@@ -39,4 +39,8 @@ class Event: NSManagedObject {
     func removeExpense(expense:Expense) -> Void {
         self.mutableSetValueForKey("expenses").removeObject(expense)
     }
+    
+    func addExpense(expense:Expense) -> Void {
+        self.mutableSetValueForKey("expenses").addObject(expense)
+    }
 }

@@ -14,7 +14,7 @@ import CoreData
 
 extension Expense {
 
-    @NSManaged var amount_franction_part: NSNumber?
+    @NSManaged var amount_fraction_part: NSNumber?
     @NSManaged var amount_integer_part: NSNumber?
     @NSManaged var date: NSDate?
     @NSManaged var details: String?

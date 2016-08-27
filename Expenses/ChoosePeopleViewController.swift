@@ -14,7 +14,7 @@ class ChoosePeopleViewController: UITableViewController {
     var expense:Expense?
     
     var people:[Person] = []
-    var checkedPeople = [Bool](count:peopleData.count, repeatedValue: false)
+    var checkedPeople = [Bool](count:0, repeatedValue: false)
     var checked:[Person] = []
     
     var expenseBuilder:NewExpenseBuilder?

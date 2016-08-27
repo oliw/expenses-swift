@@ -36,10 +36,19 @@ class DataHelper {
         newEvent.addPerson(newPerson2)
         newEvent.addPerson(newPerson3)
         // 3. Mexico Expenses
+        let newExpense = NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: context) as! Expense
+        newExpense.details = "Water Taxi Ticket"
+        newExpense.date = DateHelper.fromIso8601("2016-08-27T22:54:57+00:00")
+        newExpense.payer = newPerson
+        newExpense.addParticipant(newPerson)
+        newExpense.addParticipant(newPerson2)
+        newExpense.addParticipant(newPerson3)
+        newExpense.amount_integer_part = 10
+        newExpense.amount_fraction_part = 0
+        newEvent.addExpense(newExpense)
         do {
             try context.save()
         } catch _ {}
         return
     }
-    
 }
