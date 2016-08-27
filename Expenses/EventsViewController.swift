@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class EventsViewController: UITableViewController {
     
-    var events:[Event] = eventsData
+    var events = [Event]()
     let eventSegueIdentifier = "ShowEventSegue"
+    let addEventSegueIdentifier = "AddEventSegue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,20 @@ class EventsViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Event")
+        do {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            events = results as! [Event]
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,11 +57,8 @@ class EventsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath)
-
-        // Configure the cell...
         let event = events[indexPath.row]
         cell.textLabel?.text = event.name
-
         return cell
     }
     
@@ -66,7 +79,14 @@ class EventsViewController: UITableViewController {
                 // Do nothing
             }
             let secondAction = UIAlertAction(title: "Delete", style: .Destructive) { (alert: UIAlertAction!) -> Void in
+                let event = self.events[indexPath.row]
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                managedContext.deleteObject(event)
                 self.events.removeAtIndex(indexPath.row)
+                do {
+                    try managedContext.save()
+                } catch _ {}
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
             alert.addAction(firstAction)
@@ -96,6 +116,14 @@ class EventsViewController: UITableViewController {
             let destination = segue.destinationViewController as? EventViewController
             let eventIndex = tableView.indexPathForSelectedRow?.row
             destination?.event = events[eventIndex!]
+        } else if segue.identifier == addEventSegueIdentifier {
+            let destination = segue.destinationViewController as? UINavigationController
+            let topDestination = destination?.topViewController as? EventDetailsViewController
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext
+            let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedContext)
+            let newEvent = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Event
+            topDestination?.event = newEvent
         }
     }
     
@@ -107,11 +135,15 @@ class EventsViewController: UITableViewController {
             
             //add the new player to the players array
             if let event = eventDetailsViewController.event {
-                events.append(event)
                 
-                //update the tableView
-                let indexPath = NSIndexPath(forRow: events.count-1, inSection: 0)
-                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                do {
+                    try managedContext.save()
+                    events.append(event)
+                } catch _ {}
+                
+                tableView.reloadData()
             }
         }
     }

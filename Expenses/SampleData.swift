@@ -6,10 +6,6 @@
 //  Copyright © 2016 Oliver Wilkie. All rights reserved.
 //
 
-let eventsData = [
-    Event(name:"Mexico"),
-    Event(name: "Boston") ]
-
 let paymentsData = [
     Payment(name: "Payment1"),
     Payment(name: "Payment2")

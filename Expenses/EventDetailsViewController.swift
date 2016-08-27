@@ -36,7 +36,7 @@ class EventDetailsViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveEventDetail" {
-            event = Event(name: nameTextField.text!)
+            event?.name = nameTextField.text
         }
     }
 
