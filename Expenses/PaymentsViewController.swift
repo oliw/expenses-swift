@@ -10,7 +10,7 @@ import UIKit
 
 class PaymentsViewController: UITableViewController {
     
-    var payments:[Payment] = paymentsData
+    var event:Event?
 
     @IBOutlet weak var newPaymentButton: UIBarButtonItem!
 
@@ -27,6 +27,10 @@ class PaymentsViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.parentViewController?.navigationItem.rightBarButtonItem = self.newPaymentButton
+        
+        // TODO - Is this the right way to do this?
+        let parentTabController = self.tabBarController! as! EventViewController
+        event = parentTabController.event
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -45,14 +49,15 @@ class PaymentsViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return payments.count
+        return event!.getNumberOfExpenses()
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath)
-        let payment = payments[indexPath.row]
-        cell.textLabel?.text = payment.name
+        let expenses = event!.getExpenses()
+        let expense = expenses[indexPath.row]
+        cell.textLabel?.text = expense.details
         return cell
     }
     
@@ -76,7 +81,13 @@ class PaymentsViewController: UITableViewController {
                 // Do nothing
             }
             let secondAction = UIAlertAction(title: "Delete", style: .Destructive) { (alert: UIAlertAction!) -> Void in
-                self.payments.removeAtIndex(indexPath.row)
+                // Delete the row from the data source
+                let expense = self.event!.getExpenses()[indexPath.row]
+                self.event?.removeExpense(expense)
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                managedContext.deleteObject(expense)
+                
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
             alert.addAction(firstAction)

@@ -105,6 +105,9 @@ class EventPeopleDetailsViewController: UITableViewController {
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
             managedContext.deleteObject(person)
+            do {
+                try managedContext.save()
+            } catch _ {}
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }

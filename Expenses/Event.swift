@@ -27,5 +27,16 @@ class Event: NSManagedObject {
     func removePerson(person:Person) -> Void {
         self.mutableSetValueForKey("people").removeObject(person)
     }
-
+    
+    func getNumberOfExpenses() -> Int {
+        return self.expenses!.count
+    }
+    
+    func getExpenses() -> [Expense] {
+        return self.expenses!.allObjects as! [Expense]
+    }
+    
+    func removeExpense(expense:Expense) -> Void {
+        self.mutableSetValueForKey("expenses").removeObject(expense)
+    }
 }

@@ -29,7 +29,9 @@
 		227BBE461D721E5A0033EE11 /* EventPeopleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE451D721E5A0033EE11 /* EventPeopleDetailsViewController.swift */; };
 		227BBE491D7222130033EE11 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE471D7222130033EE11 /* Person+CoreDataProperties.swift */; };
 		227BBE4A1D7222130033EE11 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE481D7222130033EE11 /* Person.swift */; };
-		227BBE551D72344E0033EE11 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE531D72344E0033EE11 /* Event+CoreDataProperties.swift */; };
+		227BBE591D7234B50033EE11 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE571D7234B50033EE11 /* Expense+CoreDataProperties.swift */; };
+		227BBE5A1D7234B50033EE11 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE581D7234B50033EE11 /* Expense.swift */; };
+		227BBE5C1D7234DF0033EE11 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE5B1D7234DF0033EE11 /* Event+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +59,9 @@
 		227BBE451D721E5A0033EE11 /* EventPeopleDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventPeopleDetailsViewController.swift; path = Expenses/EventPeopleDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE471D7222130033EE11 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataProperties.swift"; path = "Expenses/Person+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		227BBE481D7222130033EE11 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Expenses/Person.swift; sourceTree = SOURCE_ROOT; };
-		227BBE531D72344E0033EE11 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		227BBE571D7234B50033EE11 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Expense+CoreDataProperties.swift"; path = "Expenses/Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		227BBE581D7234B50033EE11 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = Expenses/Expense.swift; sourceTree = SOURCE_ROOT; };
+		227BBE5B1D7234DF0033EE11 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "Expenses/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +131,9 @@
 		22D46B981D64BC38003BAB73 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				227BBE531D72344E0033EE11 /* Event+CoreDataProperties.swift */,
+				227BBE5B1D7234DF0033EE11 /* Event+CoreDataProperties.swift */,
+				227BBE571D7234B50033EE11 /* Expense+CoreDataProperties.swift */,
+				227BBE581D7234B50033EE11 /* Expense.swift */,
 				227BBE371D71495D0033EE11 /* Event.swift */,
 				227BBE471D7222130033EE11 /* Person+CoreDataProperties.swift */,
 				227BBE481D7222130033EE11 /* Person.swift */,
@@ -229,11 +235,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227BBE5C1D7234DF0033EE11 /* Event+CoreDataProperties.swift in Sources */,
+				227BBE5A1D7234B50033EE11 /* Expense.swift in Sources */,
 				227BBE341D7148990033EE11 /* PaymentDetailsViewController.swift in Sources */,
 				2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */,
 				227BBE2C1D7148710033EE11 /* EventViewController.swift in Sources */,
-				227BBE551D72344E0033EE11 /* Event+CoreDataProperties.swift in Sources */,
 				227BBE2A1D7148710033EE11 /* EventDetailsViewController.swift in Sources */,
+				227BBE591D7234B50033EE11 /* Expense+CoreDataProperties.swift in Sources */,
 				227BBE2D1D7148710033EE11 /* PaymentsViewController.swift in Sources */,
 				227BBE351D7148990033EE11 /* ReviewNewExpenseViewController.swift in Sources */,
 				227BBE401D71495D0033EE11 /* Payment.swift in Sources */,
