@@ -7,47 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22071A4A1D50452A00A9CDD0 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22071A491D50452A00A9CDD0 /* EventViewController.swift */; };
-		22071A4C1D504CE600A9CDD0 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */; };
-		22071A4E1D504E2D00A9CDD0 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22071A4D1D504E2D00A9CDD0 /* Payment.swift */; };
-		2219A5E11D5FB2160097B6E4 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2219A5E01D5FB2160097B6E4 /* Person.swift */; };
-		2219A5E91D5FD2A60097B6E4 /* ChoosePayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */; };
-		2219A5EB1D5FD7490097B6E4 /* ChoosePeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */; };
 		2219A5EE1D5FD8C20097B6E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219A5EC1D5FD8C20097B6E4 /* Main.storyboard */; };
-		2219A5F21D5FE1260097B6E4 /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */; };
-		22511FDD1D65560400E07886 /* ReviewNewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22511FDC1D65560400E07886 /* ReviewNewExpenseViewController.swift */; };
 		2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDAA1D431A83006BFCAE /* AppDelegate.swift */; };
 		2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDB11D431A83006BFCAE /* Expenses.xcdatamodeld */; };
 		2274FDB51D431A83006BFCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDB41D431A83006BFCAE /* Assets.xcassets */; };
 		2274FDB81D431A83006BFCAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDB61D431A83006BFCAE /* LaunchScreen.storyboard */; };
-		2274FDC61D4566CC006BFCAE /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC51D4566CC006BFCAE /* EventsViewController.swift */; };
 		2274FDCA1D456767006BFCAE /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDC91D456767006BFCAE /* SampleData.swift */; };
-		2274FDCC1D456C12006BFCAE /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */; };
-		22C67B021D65455D00B3BB54 /* NewExpenseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */; };
-		22C67B041D6545E500B3BB54 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C67B031D6545E500B3BB54 /* Amount.swift */; };
+		227BBE2A1D7148710033EE11 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE261D7148710033EE11 /* EventDetailsViewController.swift */; };
+		227BBE2B1D7148710033EE11 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE271D7148710033EE11 /* EventsViewController.swift */; };
+		227BBE2C1D7148710033EE11 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE281D7148710033EE11 /* EventViewController.swift */; };
+		227BBE2D1D7148710033EE11 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE291D7148710033EE11 /* PaymentsViewController.swift */; };
+		227BBE321D7148990033EE11 /* ChoosePayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE2E1D7148990033EE11 /* ChoosePayerViewController.swift */; };
+		227BBE331D7148990033EE11 /* ChoosePeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE2F1D7148990033EE11 /* ChoosePeopleViewController.swift */; };
+		227BBE341D7148990033EE11 /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE301D7148990033EE11 /* PaymentDetailsViewController.swift */; };
+		227BBE351D7148990033EE11 /* ReviewNewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE311D7148990033EE11 /* ReviewNewExpenseViewController.swift */; };
+		227BBE3C1D71495D0033EE11 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE361D71495D0033EE11 /* Amount.swift */; };
+		227BBE3D1D71495D0033EE11 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE371D71495D0033EE11 /* Event.swift */; };
+		227BBE3E1D71495D0033EE11 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE381D71495D0033EE11 /* Event+CoreDataProperties.swift */; };
+		227BBE3F1D71495D0033EE11 /* NewExpenseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE391D71495D0033EE11 /* NewExpenseBuilder.swift */; };
+		227BBE401D71495D0033EE11 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE3A1D71495D0033EE11 /* Payment.swift */; };
+		227BBE411D71495D0033EE11 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE3B1D71495D0033EE11 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22071A491D50452A00A9CDD0 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = Expenses/EventViewController.swift; sourceTree = SOURCE_ROOT; };
-		22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsViewController.swift; path = Expenses/PaymentsViewController.swift; sourceTree = SOURCE_ROOT; };
-		22071A4D1D504E2D00A9CDD0 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Payment.swift; path = ../Payment.swift; sourceTree = "<group>"; };
-		2219A5E01D5FB2160097B6E4 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
-		2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePayerViewController.swift; path = ../ChoosePayerViewController.swift; sourceTree = "<group>"; };
-		2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePeopleViewController.swift; path = ../ChoosePeopleViewController.swift; sourceTree = "<group>"; };
 		2219A5ED1D5FD8C20097B6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentDetailsViewController.swift; path = ../PaymentDetailsViewController.swift; sourceTree = "<group>"; };
-		22511FDC1D65560400E07886 /* ReviewNewExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewNewExpenseViewController.swift; path = ../ReviewNewExpenseViewController.swift; sourceTree = "<group>"; };
 		2274FDA71D431A83006BFCAE /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274FDAA1D431A83006BFCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2274FDB21D431A83006BFCAE /* Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expenses.xcdatamodel; sourceTree = "<group>"; };
 		2274FDB41D431A83006BFCAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2274FDB71D431A83006BFCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2274FDB91D431A83006BFCAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2274FDC51D4566CC006BFCAE /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = Expenses/EventsViewController.swift; sourceTree = SOURCE_ROOT; };
 		2274FDC91D456767006BFCAE /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
-		2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailsViewController.swift; path = Expenses/EventDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
-		22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewExpenseBuilder.swift; path = Expenses/NewExpenseBuilder.swift; sourceTree = SOURCE_ROOT; };
-		22C67B031D6545E500B3BB54 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = ../Amount.swift; sourceTree = "<group>"; };
+		227BBE261D7148710033EE11 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailsViewController.swift; path = Expenses/EventDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBE271D7148710033EE11 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = Expenses/EventsViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBE281D7148710033EE11 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = Expenses/EventViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBE291D7148710033EE11 /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsViewController.swift; path = Expenses/PaymentsViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBE2E1D7148990033EE11 /* ChoosePayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePayerViewController.swift; path = Expenses/ChoosePayerViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBE2F1D7148990033EE11 /* ChoosePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePeopleViewController.swift; path = Expenses/ChoosePeopleViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBE301D7148990033EE11 /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentDetailsViewController.swift; path = Expenses/PaymentDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBE311D7148990033EE11 /* ReviewNewExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewNewExpenseViewController.swift; path = Expenses/ReviewNewExpenseViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBE361D71495D0033EE11 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = Expenses/Amount.swift; sourceTree = SOURCE_ROOT; };
+		227BBE371D71495D0033EE11 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Expenses/Event.swift; sourceTree = SOURCE_ROOT; };
+		227BBE381D71495D0033EE11 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "Expenses/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		227BBE391D71495D0033EE11 /* NewExpenseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewExpenseBuilder.swift; path = Expenses/NewExpenseBuilder.swift; sourceTree = SOURCE_ROOT; };
+		227BBE3A1D71495D0033EE11 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Payment.swift; path = Expenses/Payment.swift; sourceTree = SOURCE_ROOT; };
+		227BBE3B1D71495D0033EE11 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = Expenses/Person.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +68,10 @@
 		22511FDE1D65616F00E07886 /* NewExpense */ = {
 			isa = PBXGroup;
 			children = (
-				2219A5EA1D5FD7490097B6E4 /* ChoosePeopleViewController.swift */,
-				2219A5E81D5FD2A60097B6E4 /* ChoosePayerViewController.swift */,
-				2219A5F11D5FE1260097B6E4 /* PaymentDetailsViewController.swift */,
-				22511FDC1D65560400E07886 /* ReviewNewExpenseViewController.swift */,
+				227BBE2E1D7148990033EE11 /* ChoosePayerViewController.swift */,
+				227BBE2F1D7148990033EE11 /* ChoosePeopleViewController.swift */,
+				227BBE301D7148990033EE11 /* PaymentDetailsViewController.swift */,
+				227BBE311D7148990033EE11 /* ReviewNewExpenseViewController.swift */,
 			);
 			name = NewExpense;
 			sourceTree = "<group>";
@@ -108,10 +112,12 @@
 		22D46B981D64BC38003BAB73 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				22071A4D1D504E2D00A9CDD0 /* Payment.swift */,
-				2219A5E01D5FB2160097B6E4 /* Person.swift */,
-				22C67B011D65455D00B3BB54 /* NewExpenseBuilder.swift */,
-				22C67B031D6545E500B3BB54 /* Amount.swift */,
+				227BBE361D71495D0033EE11 /* Amount.swift */,
+				227BBE371D71495D0033EE11 /* Event.swift */,
+				227BBE381D71495D0033EE11 /* Event+CoreDataProperties.swift */,
+				227BBE391D71495D0033EE11 /* NewExpenseBuilder.swift */,
+				227BBE3A1D71495D0033EE11 /* Payment.swift */,
+				227BBE3B1D71495D0033EE11 /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,11 +132,11 @@
 		22D46B9B1D64BCA1003BAB73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				227BBE261D7148710033EE11 /* EventDetailsViewController.swift */,
+				227BBE271D7148710033EE11 /* EventsViewController.swift */,
+				227BBE281D7148710033EE11 /* EventViewController.swift */,
+				227BBE291D7148710033EE11 /* PaymentsViewController.swift */,
 				22511FDE1D65616F00E07886 /* NewExpense */,
-				22071A4B1D504CE600A9CDD0 /* PaymentsViewController.swift */,
-				2274FDCB1D456C12006BFCAE /* EventDetailsViewController.swift */,
-				22071A491D50452A00A9CDD0 /* EventViewController.swift */,
-				2274FDC51D4566CC006BFCAE /* EventsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,21 +212,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2219A5EB1D5FD7490097B6E4 /* ChoosePeopleViewController.swift in Sources */,
-				2219A5E91D5FD2A60097B6E4 /* ChoosePayerViewController.swift in Sources */,
-				22511FDD1D65560400E07886 /* ReviewNewExpenseViewController.swift in Sources */,
+				227BBE341D7148990033EE11 /* PaymentDetailsViewController.swift in Sources */,
 				2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */,
-				22071A4E1D504E2D00A9CDD0 /* Payment.swift in Sources */,
-				2274FDC61D4566CC006BFCAE /* EventsViewController.swift in Sources */,
-				22C67B041D6545E500B3BB54 /* Amount.swift in Sources */,
-				22071A4C1D504CE600A9CDD0 /* PaymentsViewController.swift in Sources */,
-				2219A5E11D5FB2160097B6E4 /* Person.swift in Sources */,
-				2219A5F21D5FE1260097B6E4 /* PaymentDetailsViewController.swift in Sources */,
-				22071A4A1D50452A00A9CDD0 /* EventViewController.swift in Sources */,
-				2274FDCC1D456C12006BFCAE /* EventDetailsViewController.swift in Sources */,
+				227BBE2C1D7148710033EE11 /* EventViewController.swift in Sources */,
+				227BBE2A1D7148710033EE11 /* EventDetailsViewController.swift in Sources */,
+				227BBE2D1D7148710033EE11 /* PaymentsViewController.swift in Sources */,
+				227BBE351D7148990033EE11 /* ReviewNewExpenseViewController.swift in Sources */,
+				227BBE401D71495D0033EE11 /* Payment.swift in Sources */,
+				227BBE321D7148990033EE11 /* ChoosePayerViewController.swift in Sources */,
 				2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */,
-				22C67B021D65455D00B3BB54 /* NewExpenseBuilder.swift in Sources */,
+				227BBE331D7148990033EE11 /* ChoosePeopleViewController.swift in Sources */,
+				227BBE3F1D71495D0033EE11 /* NewExpenseBuilder.swift in Sources */,
 				2274FDCA1D456767006BFCAE /* SampleData.swift in Sources */,
+				227BBE3E1D71495D0033EE11 /* Event+CoreDataProperties.swift in Sources */,
+				227BBE2B1D7148710033EE11 /* EventsViewController.swift in Sources */,
+				227BBE411D71495D0033EE11 /* Person.swift in Sources */,
+				227BBE3C1D71495D0033EE11 /* Amount.swift in Sources */,
+				227BBE3D1D71495D0033EE11 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
