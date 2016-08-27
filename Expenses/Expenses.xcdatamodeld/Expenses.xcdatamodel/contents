@@ -2,6 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
     <entity name="Event" representedClassName=".Event" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="expenses" toMany="YES" deletionRule="Cascade" destinationEntity="Expense" syncable="YES"/>
         <relationship name="people" toMany="YES" deletionRule="Cascade" destinationEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Expense" syncable="YES">
@@ -16,7 +17,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-54" positionY="0" width="128" height="75"/>
+        <element name="Event" positionX="-54" positionY="0" width="128" height="90"/>
         <element name="Expense" positionX="-54" positionY="9" width="128" height="30"/>
         <element name="Person" positionX="-63" positionY="-18" width="128" height="60"/>
     </elements>
