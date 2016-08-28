@@ -141,6 +141,15 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		227BBEA41D7385F40033EE11 /* NewEvent */ = {
+			isa = PBXGroup;
+			children = (
+				227BBE451D721E5A0033EE11 /* EventPeopleDetailsViewController.swift */,
+				227BBE261D7148710033EE11 /* EventDetailsViewController.swift */,
+			);
+			name = NewEvent;
+			sourceTree = "<group>";
+		};
 		22D46B981D64BC38003BAB73 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,8 +176,7 @@
 		22D46B9B1D64BCA1003BAB73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				227BBE451D721E5A0033EE11 /* EventPeopleDetailsViewController.swift */,
-				227BBE261D7148710033EE11 /* EventDetailsViewController.swift */,
+				227BBEA41D7385F40033EE11 /* NewEvent */,
 				227BBE271D7148710033EE11 /* EventsViewController.swift */,
 				227BBE281D7148710033EE11 /* EventViewController.swift */,
 				227BBE291D7148710033EE11 /* ActivityViewController.swift */,
