@@ -15,4 +15,16 @@ class DateHelper {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
         return dateFormatter.dateFromString(string)
     }
+    
+    static func prettyDate(date: NSDate) -> String {
+        let formatter = NSDateFormatter()
+        formatter.timeStyle = .NoStyle
+        formatter.dateStyle = .ShortStyle
+        formatter.doesRelativeDateFormatting = true
+        
+        let locale = NSLocale.currentLocale()
+        formatter.locale = locale
+        
+        return formatter.stringFromDate(date)
+    }
 }

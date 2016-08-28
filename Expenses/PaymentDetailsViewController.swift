@@ -63,6 +63,7 @@ class PaymentDetailsViewController: UITableViewController, UITextFieldDelegate {
             self.expense?.amount_integer_part = amountPaidIntegerPart
             self.expense?.amount_fraction_part = amountPaidFractionalPart
             self.expense?.details = detailsTextField.text
+            self.expense?.date = NSDate()
             destination?.event = self.event
             destination?.expense = self.expense
         }

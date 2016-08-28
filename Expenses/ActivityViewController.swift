@@ -129,6 +129,10 @@ class PaymentsViewController: UITableViewController {
             let newExpense = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Expense
             destination?.expense = newExpense
             destination?.event = event
+        } else if segue.identifier == "ViewExpenseSegue" {
+            let destination = segue.destinationViewController as? ExpenseDetailsViewController
+            let expenseIndex = tableView.indexPathForSelectedRow?.row
+            destination?.expense = event?.getExpenses()[expenseIndex!]
         }
     }
     

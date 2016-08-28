@@ -34,6 +34,8 @@
 		227BBE9C1D734CD10033EE11 /* SettlementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE9B1D734CD10033EE11 /* SettlementsViewController.swift */; };
 		227BBEA01D734F650033EE11 /* SettlementRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE9F1D734F650033EE11 /* SettlementRecommendation.swift */; };
 		227BBEA31D7352070033EE11 /* SettlementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBEA21D7352070033EE11 /* SettlementService.swift */; };
+		227BBEA61D73894B0033EE11 /* ExpenseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBEA51D73894B0033EE11 /* ExpenseDetailsViewController.swift */; };
+		227BBEA81D73921C0033EE11 /* AmountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBEA71D73921C0033EE11 /* AmountHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		227BBE9B1D734CD10033EE11 /* SettlementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettlementsViewController.swift; path = Expenses/SettlementsViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE9F1D734F650033EE11 /* SettlementRecommendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettlementRecommendation.swift; path = Expenses/SettlementRecommendation.swift; sourceTree = SOURCE_ROOT; };
 		227BBEA21D7352070033EE11 /* SettlementService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettlementService.swift; sourceTree = "<group>"; };
+		227BBEA51D73894B0033EE11 /* ExpenseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpenseDetailsViewController.swift; path = Expenses/ExpenseDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBEA71D73921C0033EE11 /* AmountHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 			children = (
 				227BBE431D72042D0033EE11 /* DataHelper.swift */,
 				227BBE5D1D7251350033EE11 /* DateHelper.swift */,
+				227BBEA71D73921C0033EE11 /* AmountHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				227BBE281D7148710033EE11 /* EventViewController.swift */,
 				227BBE291D7148710033EE11 /* ActivityViewController.swift */,
 				227BBE9B1D734CD10033EE11 /* SettlementsViewController.swift */,
+				227BBEA51D73894B0033EE11 /* ExpenseDetailsViewController.swift */,
 				22511FDE1D65616F00E07886 /* NewExpense */,
 			);
 			path = Controllers;
@@ -257,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227BBEA61D73894B0033EE11 /* ExpenseDetailsViewController.swift in Sources */,
 				227BBE5C1D7234DF0033EE11 /* Event+CoreDataProperties.swift in Sources */,
 				227BBE5A1D7234B50033EE11 /* Expense.swift in Sources */,
 				227BBE341D7148990033EE11 /* PaymentDetailsViewController.swift in Sources */,
@@ -269,6 +276,7 @@
 				227BBE2D1D7148710033EE11 /* ActivityViewController.swift in Sources */,
 				227BBE351D7148990033EE11 /* ReviewNewExpenseViewController.swift in Sources */,
 				227BBE9C1D734CD10033EE11 /* SettlementsViewController.swift in Sources */,
+				227BBEA81D73921C0033EE11 /* AmountHelper.swift in Sources */,
 				227BBE401D71495D0033EE11 /* Payment.swift in Sources */,
 				227BBE321D7148990033EE11 /* ChoosePayerViewController.swift in Sources */,
 				2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */,
