@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PaybackRecommendation {
+struct SettlementRecommendation {
     let from: Person
     let to: Person
     let amount: Amount

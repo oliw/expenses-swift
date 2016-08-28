@@ -11,7 +11,8 @@ import UIKit
 class SettlementsViewController: UITableViewController {
     
     var event:Event?
-
+    var settlementRecommendations:[SettlementRecommendation]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +21,17 @@ class SettlementsViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // TODO - Is this the right way to do this?
+        let parentTabController = self.tabBarController! as! EventViewController
+        event = parentTabController.event
+        
+        let settlementService = SettlementService.sharedInstance
+        self.settlementRecommendations = settlementService.getRecommendations(event!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,24 +42,23 @@ class SettlementsViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return settlementRecommendations!.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("settlementRecommendationCell", forIndexPath: indexPath)
 
-        // Configure the cell...
-
+        let recommendation = settlementRecommendations![indexPath.row]
+        let from = recommendation.from.name!
+        let to = recommendation.to.name!
+        let amount = recommendation.amount
+        cell.textLabel?.text = "\(from) to \(to) for $\(amount.integerPart()).\(amount.decimalPart())"
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
