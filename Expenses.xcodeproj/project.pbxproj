@@ -31,6 +31,7 @@
 		227BBE5A1D7234B50033EE11 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE581D7234B50033EE11 /* Expense.swift */; };
 		227BBE5C1D7234DF0033EE11 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE5B1D7234DF0033EE11 /* Event+CoreDataProperties.swift */; };
 		227BBE5E1D7251350033EE11 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE5D1D7251350033EE11 /* DateHelper.swift */; };
+		227BBE9C1D734CD10033EE11 /* DebtsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE9B1D734CD10033EE11 /* DebtsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		227BBE581D7234B50033EE11 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = Expenses/Expense.swift; sourceTree = SOURCE_ROOT; };
 		227BBE5B1D7234DF0033EE11 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "Expenses/Event+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		227BBE5D1D7251350033EE11 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		227BBE9B1D734CD10033EE11 /* DebtsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebtsViewController.swift; path = Expenses/DebtsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				227BBE271D7148710033EE11 /* EventsViewController.swift */,
 				227BBE281D7148710033EE11 /* EventViewController.swift */,
 				227BBE291D7148710033EE11 /* ActivityViewController.swift */,
+				227BBE9B1D734CD10033EE11 /* DebtsViewController.swift */,
 				22511FDE1D65616F00E07886 /* NewExpense */,
 			);
 			path = Controllers;
@@ -241,6 +244,7 @@
 				227BBE591D7234B50033EE11 /* Expense+CoreDataProperties.swift in Sources */,
 				227BBE2D1D7148710033EE11 /* ActivityViewController.swift in Sources */,
 				227BBE351D7148990033EE11 /* ReviewNewExpenseViewController.swift in Sources */,
+				227BBE9C1D734CD10033EE11 /* DebtsViewController.swift in Sources */,
 				227BBE401D71495D0033EE11 /* Payment.swift in Sources */,
 				227BBE321D7148990033EE11 /* ChoosePayerViewController.swift in Sources */,
 				2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */,
