@@ -46,6 +46,17 @@ class DataHelper {
         newExpense.amount_integer_part = 10
         newExpense.amount_fraction_part = 0
         newEvent.addExpensesObject(newExpense)
+        
+        let newExpense2 = NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: context) as! Expense
+        newExpense2.details = "Groceries"
+        newExpense2.date = DateHelper.fromIso8601("2016-08-27T22:55:57+00:00")
+        newExpense2.payer = newPerson2
+        newExpense2.addParticipantsObject(newPerson)
+        newExpense2.addParticipantsObject(newPerson2)
+        newExpense2.addParticipantsObject(newPerson3)
+        newExpense2.amount_integer_part = 20
+        newExpense2.amount_fraction_part = 0
+        newEvent.addExpensesObject(newExpense2)
         do {
             try context.save()
         } catch _ {}
