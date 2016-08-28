@@ -179,25 +179,6 @@
             </objects>
             <point key="canvasLocation" x="296" y="305"/>
         </scene>
-        <!--Debts-->
-        <scene sceneID="Im8-q5-W1W">
-            <objects>
-                <viewController id="MoL-tJ-KN7" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="a5p-I5-Ofj"/>
-                        <viewControllerLayoutGuide type="bottom" id="VjU-6L-ddK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VWu-9t-hsp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Debts" id="hrM-d5-vAb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hBS-4L-MrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2340" y="-1323"/>
-        </scene>
         <!--Activity-->
         <scene sceneID="8JV-ww-m4h">
             <objects>
@@ -442,12 +423,41 @@
                     </tabBar>
                     <connections>
                         <segue destination="qDh-9R-KLv" kind="relationship" relationship="viewControllers" id="KNW-0u-Fnf"/>
-                        <segue destination="MoL-tJ-KN7" kind="relationship" relationship="viewControllers" id="W1f-qr-VCw"/>
+                        <segue destination="Ph2-k1-BLW" kind="relationship" relationship="viewControllers" id="5Nn-OW-fVd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yh-l2-q3o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="950" y="-1580"/>
+        </scene>
+        <!--Debts-->
+        <scene sceneID="k4F-Uo-wa6">
+            <objects>
+                <tableViewController title="Debts" id="Ph2-k1-BLW" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sSP-v1-s3H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lPQ-hr-1n0">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lPQ-hr-1n0" id="nja-gc-l6n">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ph2-k1-BLW" id="JIZ-aN-z0N"/>
+                            <outlet property="delegate" destination="Ph2-k1-BLW" id="VFd-8Z-Atg"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Debts" id="Bft-yS-vpu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7X-A3-CLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442" y="-1261"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4SH-Ef-m3u">
