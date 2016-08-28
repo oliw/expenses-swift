@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DebtsViewController: UITableViewController {
+class SettlementsViewController: UITableViewController {
     
     var event:Event?
 

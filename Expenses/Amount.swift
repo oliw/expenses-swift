@@ -11,4 +11,10 @@ import Foundation
 struct Amount {
     let integerPart: Int
     let decimalPart: Int
+    
+    init(integerPart: Int, decimalPart: Int) {
+        self.integerPart = integerPart
+        self.decimalPart = decimalPart
+    }
+    
 }
