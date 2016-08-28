@@ -32,9 +32,9 @@ class DataHelper {
         newPerson2.name = "Liz"
         let newPerson3 = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: context) as! Person
         newPerson3.name = "Bogdan"
-        newEvent.addPerson(newPerson)
-        newEvent.addPerson(newPerson2)
-        newEvent.addPerson(newPerson3)
+        newEvent.addPeopleObject(newPerson)
+        newEvent.addPeopleObject(newPerson2)
+        newEvent.addPeopleObject(newPerson3)
         // 3. Mexico Expenses
         let newExpense = NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: context) as! Expense
         newExpense.details = "Water Taxi Ticket"
@@ -45,7 +45,7 @@ class DataHelper {
         newExpense.addParticipantsObject(newPerson3)
         newExpense.amount_integer_part = 10
         newExpense.amount_fraction_part = 0
-        newEvent.addExpense(newExpense)
+        newEvent.addExpensesObject(newExpense)
         do {
             try context.save()
         } catch _ {}

@@ -48,7 +48,7 @@ class EventPeopleDetailsViewController: UITableViewController {
             let managedContext = appDelegate.managedObjectContext
             let newPerson = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: managedContext) as! Person
             newPerson.name = personName
-            self.event?.addPerson(newPerson)
+            self.event?.addPeopleObject(newPerson)
             
             self.tableView.reloadData()
             
@@ -101,7 +101,7 @@ class EventPeopleDetailsViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             let person = self.event!.getPeople()[indexPath.row]
-            self.event?.removePerson(person)
+            self.event?.removePeopleObject(person)
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
             managedContext.deleteObject(person)

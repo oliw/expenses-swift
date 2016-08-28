@@ -20,13 +20,8 @@ class Event: NSManagedObject {
         return self.people!.allObjects as! [Person]
     }
     
-    func addPerson(person:Person) -> Void {
-        self.mutableSetValueForKey("people").addObject(person)
-    }
-    
-    func removePerson(person:Person) -> Void {
-        self.mutableSetValueForKey("people").removeObject(person)
-    }
+    @NSManaged func addPeopleObject(value:Person)
+    @NSManaged func removePeopleObject(value:Person)
     
     func getNumberOfExpenses() -> Int {
         return self.expenses!.count
@@ -36,11 +31,6 @@ class Event: NSManagedObject {
         return self.expenses!.allObjects as! [Expense]
     }
     
-    func removeExpense(expense:Expense) -> Void {
-        self.mutableSetValueForKey("expenses").removeObject(expense)
-    }
-    
-    func addExpense(expense:Expense) -> Void {
-        self.mutableSetValueForKey("expenses").addObject(expense)
-    }
+    @NSManaged func addExpensesObject(value:Expense)
+    @NSManaged func removeExpensesObject(value:Expense)
 }

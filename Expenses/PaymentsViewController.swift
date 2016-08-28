@@ -84,7 +84,7 @@ class PaymentsViewController: UITableViewController {
             let secondAction = UIAlertAction(title: "Delete", style: .Destructive) { (alert: UIAlertAction!) -> Void in
                 // Delete the row from the data source
                 let expense = self.event!.getExpenses()[indexPath.row]
-                self.event?.removeExpense(expense)
+                self.event?.removeExpensesObject(expense)
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                 let managedContext = appDelegate.managedObjectContext
                 managedContext.deleteObject(expense)
@@ -120,7 +120,6 @@ class PaymentsViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "NewExpenseSegue" {
-            let parent = self.parentViewController as? EventViewController
             let destinationNav = segue.destinationViewController as? UINavigationController
             let destination = destinationNav?.topViewController as? ChoosePayerViewController
             
@@ -131,6 +130,27 @@ class PaymentsViewController: UITableViewController {
             destination?.expense = newExpense
             destination?.event = event
         }
+    }
+    
+    @IBAction func saveExpense(segue:UIStoryboardSegue) {
+        let origin = segue.sourceViewController as! ReviewNewExpenseViewController
+        let event = origin.event
+        let expense = origin.expense!
+        event?.addExpensesObject(expense)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        self.tableView.reloadData()
+    }
+    
+    @IBAction func cancelExpense(segue:UIStoryboardSegue) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        managedContext.rollback()
     }
 
 }

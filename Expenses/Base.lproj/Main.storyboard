@@ -282,7 +282,7 @@
                     <navigationItem key="navigationItem" title="Payer" id="eWG-V5-W9i">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ACI-xb-fW0">
                             <connections>
-                                <segue destination="rcN-lW-zTZ" kind="unwind" unwindAction="cancelToPaymentsViewController:" id="MMe-2W-VCM"/>
+                                <segue destination="rcN-lW-zTZ" kind="unwind" unwindAction="cancelExpense:" id="Sgd-7F-5FV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -398,6 +398,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="amountTextField" destination="FBC-Rg-rhp" id="Mbm-1D-Uef"/>
+                        <outlet property="detailsTextField" destination="V5B-gA-FLV" id="ubO-su-EcX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiP-st-Vay" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -420,7 +421,7 @@
                     <navigationItem key="navigationItem" title="Review" id="IQa-0H-4tb">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="9gj-UN-xcH">
                             <connections>
-                                <segue destination="fI7-sq-5GS" kind="unwind" unwindAction="cancelToPaymentsViewController:" id="LAZ-ok-IOH"/>
+                                <segue destination="fI7-sq-5GS" kind="unwind" unwindAction="saveExpense:" id="CTc-g8-OzD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

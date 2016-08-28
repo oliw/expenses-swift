@@ -14,6 +14,7 @@ class PaymentDetailsViewController: UITableViewController, UITextFieldDelegate {
     var expense:Expense?
     
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var detailsTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,18 @@ class PaymentDetailsViewController: UITableViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
         if segue.identifier == "ReviewExpenseSegue" {
             let destination = segue.destinationViewController as? ReviewNewExpenseViewController
-            let amountPaid = Amount(integerPart: 12, decimalPart: 12)
+            let parts = amountTextField.text!.componentsSeparatedByString(".")
+            var amountPaidIntegerPart = 0
+            var amountPaidFractionalPart = 0
+            if parts[0].characters.count > 0 {
+                amountPaidIntegerPart = Int(parts[0])!
+            }
+            if parts.count == 2 {
+                amountPaidFractionalPart = Int(parts[1])!
+            }
+            self.expense?.amount_integer_part = amountPaidIntegerPart
+            self.expense?.amount_fraction_part = amountPaidFractionalPart
+            self.expense?.details = detailsTextField.text
             destination?.event = self.event
             destination?.expense = self.expense
         }
