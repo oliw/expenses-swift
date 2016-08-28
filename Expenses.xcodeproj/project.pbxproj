@@ -15,7 +15,7 @@
 		227BBE2A1D7148710033EE11 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE261D7148710033EE11 /* EventDetailsViewController.swift */; };
 		227BBE2B1D7148710033EE11 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE271D7148710033EE11 /* EventsViewController.swift */; };
 		227BBE2C1D7148710033EE11 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE281D7148710033EE11 /* EventViewController.swift */; };
-		227BBE2D1D7148710033EE11 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE291D7148710033EE11 /* PaymentsViewController.swift */; };
+		227BBE2D1D7148710033EE11 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE291D7148710033EE11 /* ActivityViewController.swift */; };
 		227BBE321D7148990033EE11 /* ChoosePayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE2E1D7148990033EE11 /* ChoosePayerViewController.swift */; };
 		227BBE331D7148990033EE11 /* ChoosePeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE2F1D7148990033EE11 /* ChoosePeopleViewController.swift */; };
 		227BBE341D7148990033EE11 /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE301D7148990033EE11 /* PaymentDetailsViewController.swift */; };
@@ -44,7 +44,7 @@
 		227BBE261D7148710033EE11 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetailsViewController.swift; path = Expenses/EventDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE271D7148710033EE11 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsViewController.swift; path = Expenses/EventsViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE281D7148710033EE11 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = Expenses/EventViewController.swift; sourceTree = SOURCE_ROOT; };
-		227BBE291D7148710033EE11 /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentsViewController.swift; path = Expenses/PaymentsViewController.swift; sourceTree = SOURCE_ROOT; };
+		227BBE291D7148710033EE11 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = Expenses/ActivityViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE2E1D7148990033EE11 /* ChoosePayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePayerViewController.swift; path = Expenses/ChoosePayerViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE2F1D7148990033EE11 /* ChoosePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePeopleViewController.swift; path = Expenses/ChoosePeopleViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE301D7148990033EE11 /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentDetailsViewController.swift; path = Expenses/PaymentDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -155,7 +155,7 @@
 				227BBE261D7148710033EE11 /* EventDetailsViewController.swift */,
 				227BBE271D7148710033EE11 /* EventsViewController.swift */,
 				227BBE281D7148710033EE11 /* EventViewController.swift */,
-				227BBE291D7148710033EE11 /* PaymentsViewController.swift */,
+				227BBE291D7148710033EE11 /* ActivityViewController.swift */,
 				22511FDE1D65616F00E07886 /* NewExpense */,
 			);
 			path = Controllers;
@@ -239,7 +239,7 @@
 				227BBE2C1D7148710033EE11 /* EventViewController.swift in Sources */,
 				227BBE2A1D7148710033EE11 /* EventDetailsViewController.swift in Sources */,
 				227BBE591D7234B50033EE11 /* Expense+CoreDataProperties.swift in Sources */,
-				227BBE2D1D7148710033EE11 /* PaymentsViewController.swift in Sources */,
+				227BBE2D1D7148710033EE11 /* ActivityViewController.swift in Sources */,
 				227BBE351D7148990033EE11 /* ReviewNewExpenseViewController.swift in Sources */,
 				227BBE401D71495D0033EE11 /* Payment.swift in Sources */,
 				227BBE321D7148990033EE11 /* ChoosePayerViewController.swift in Sources */,
