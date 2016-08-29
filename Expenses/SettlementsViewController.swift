@@ -13,6 +13,9 @@ class SettlementsViewController: UITableViewController {
     var event:Event?
     var settlementRecommendations:[SettlementRecommendation]?
     
+    
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,12 +29,18 @@ class SettlementsViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.parentViewController?.navigationItem.setRightBarButtonItem(shareButton, animated: animated)
+        
         // TODO - Is this the right way to do this?
         let parentTabController = self.tabBarController! as! EventViewController
         event = parentTabController.event
         
         let settlementService = SettlementService.sharedInstance
         self.settlementRecommendations = settlementService.getRecommendations(event!)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,12 +13,12 @@ class PaymentsViewController: UITableViewController {
     
     var event:Event?
 
-    @IBOutlet weak var newPaymentButton: UIBarButtonItem!
+
+    @IBOutlet var addButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,7 +27,9 @@ class PaymentsViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.parentViewController?.navigationItem.rightBarButtonItem = self.newPaymentButton
+        super.viewWillAppear(animated)
+        
+        self.parentViewController?.navigationItem.setRightBarButtonItem(addButton, animated: animated)
         
         // TODO - Is this the right way to do this?
         let parentTabController = self.tabBarController! as! EventViewController
@@ -35,7 +37,7 @@ class PaymentsViewController: UITableViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        self.parentViewController?.navigationItem.rightBarButtonItem = nil
+        super.viewWillDisappear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +66,7 @@ class PaymentsViewController: UITableViewController {
     
     @IBAction func cancelToPaymentsViewController(segue:UIStoryboardSegue) {
         // TODO - This feels hacky
-        self.parentViewController?.navigationItem.rightBarButtonItem = self.newPaymentButton
+        self.parentViewController?.navigationItem.rightBarButtonItem = self.addButton
     }
 
     /*
