@@ -218,7 +218,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gyu-qk-tw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem systemItem="add" id="jih-bq-6DB"/>
+                <barButtonItem systemItem="add" id="jih-bq-6DB">
+                    <connections>
+                        <segue destination="hUT-0v-5qe" kind="show" identifier="NewExpenseSegue" id="gWj-Su-pNc"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="2014" y="-2014"/>
         </scene>
