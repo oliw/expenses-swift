@@ -48,6 +48,7 @@ class SettlementsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -67,6 +68,11 @@ class SettlementsViewController: UITableViewController {
         let amount = recommendation.amount
         cell.textLabel?.text = "\(from) to \(to) for $\(amount.integerPart()).\(amount.decimalPart())"
         return cell
+    }
+    
+    func displayShareSheet(shareContent:String) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: {})
     }
 
     /*
@@ -113,5 +119,9 @@ class SettlementsViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func shareButtonClicked(sender: AnyObject) {
+        displayShareSheet("Hello")
+    }
 
 }

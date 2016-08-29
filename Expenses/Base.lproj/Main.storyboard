@@ -463,7 +463,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7X-A3-CLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem systemItem="action" id="q89-gQ-WbS"/>
+                <barButtonItem systemItem="action" id="q89-gQ-WbS">
+                    <connections>
+                        <action selector="shareButtonClicked:" destination="Ph2-k1-BLW" id="Con-8F-xkp"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="1754" y="-1365"/>
         </scene>
