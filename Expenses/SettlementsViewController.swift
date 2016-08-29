@@ -47,6 +47,30 @@ class SettlementsViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func displayShareSheet(shareContent:String) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: {})
+    }
+    
+    func makePayment(settlementRecommendation:SettlementRecommendation) {
+        
+    }
+    
+    func displayActionSheet(settlementRecommendation:SettlementRecommendation) {
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let markPaidAction = UIAlertAction(title: "Mark Paid", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.makePayment(settlementRecommendation)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        optionMenu.addAction(markPaidAction)
+        optionMenu.addAction(cancelAction)
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
 
     
     // MARK: - Table view data source
@@ -70,9 +94,9 @@ class SettlementsViewController: UITableViewController {
         return cell
     }
     
-    func displayShareSheet(shareContent:String) {
-        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
-        presentViewController(activityViewController, animated: true, completion: {})
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let settlementRecommendation = self.settlementRecommendations![indexPath.row]
+        displayActionSheet(settlementRecommendation)
     }
 
     /*
