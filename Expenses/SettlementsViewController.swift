@@ -66,7 +66,7 @@ class SettlementsViewController: UITableViewController {
         let from = recommendation.from.name!
         let to = recommendation.to.name!
         let amount = recommendation.amount
-        cell.textLabel?.text = "\(from) to \(to) for $\(amount.integerPart()).\(amount.decimalPart())"
+        cell.textLabel?.text = "\(from) to \(to) for \(AmountHelper.prettyAmount(amount))"
         return cell
     }
     
