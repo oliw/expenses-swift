@@ -210,7 +210,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Activity" id="lau-Mf-iN9"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="Money Box-50" id="lau-Mf-iN9"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -455,7 +455,7 @@
                             <outlet property="delegate" destination="Ph2-k1-BLW" id="VFd-8Z-Atg"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Debts" id="pqb-9H-wUQ"/>
+                    <tabBarItem key="tabBarItem" title="Balances" image="Calculator-50" id="pqb-9H-wUQ"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -664,4 +664,8 @@
             <point key="canvasLocation" x="3388" y="-2014"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Calculator-50" width="50" height="50"/>
+        <image name="Money Box-50" width="50" height="50"/>
+    </resources>
 </document>
