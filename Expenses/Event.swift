@@ -31,6 +31,17 @@ class Event: NSManagedObject {
         return self.expenses!.allObjects as! [Expense]
     }
     
+    func getPaybacks() -> [Payback] {
+        return self.paybacks!.allObjects as! [Payback]
+    }
+    
+    func getNumberOfPaybacks() -> Int {
+        return self.paybacks!.count
+    }
+    
+    @NSManaged func addPaybacksObject(value:Payback)
+    @NSManaged func removePaybacksObject(value:Payback)
+    
     @NSManaged func addExpensesObject(value:Expense)
     @NSManaged func removeExpensesObject(value:Expense)
 }

@@ -3,6 +3,7 @@
     <entity name="Event" representedClassName=".Event" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="expenses" toMany="YES" deletionRule="Cascade" destinationEntity="Expense" syncable="YES"/>
+        <relationship name="paybacks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Payback" syncable="YES"/>
         <relationship name="people" toMany="YES" deletionRule="Cascade" destinationEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Expense" representedClassName=".Expense" syncable="YES">
@@ -13,12 +14,20 @@
         <relationship name="participants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
         <relationship name="payer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
     </entity>
+    <entity name="Payback" representedClassName=".Payback" syncable="YES">
+        <attribute name="amount_decimal_part" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="amount_integer_part" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="paid_back_at" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="receiver" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
+        <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
+    </entity>
     <entity name="Person" representedClassName=".Person" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-54" positionY="0" width="128" height="90"/>
+        <element name="Event" positionX="-54" positionY="0" width="128" height="105"/>
         <element name="Expense" positionX="-54" positionY="9" width="128" height="135"/>
         <element name="Person" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Payback" positionX="-54" positionY="45" width="128" height="120"/>
     </elements>
 </model>

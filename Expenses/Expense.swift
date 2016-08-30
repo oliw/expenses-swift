@@ -10,8 +10,14 @@ import Foundation
 import CoreData
 
 
-class Expense: NSManagedObject {
+class Expense: NSManagedObject, ActivityItem {
 
+    let activityType: ActivityItemType = .Expense
+    
+    func getDate() -> NSDate {
+        return self.date!
+    }
+    
     func getNumberOfParticipants() -> Int {
         return self.participants!.count
     }

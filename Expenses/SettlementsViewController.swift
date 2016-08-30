@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SettlementsViewController: UITableViewController {
     
@@ -55,7 +56,18 @@ class SettlementsViewController: UITableViewController {
     }
     
     func makePayment(settlementRecommendation:SettlementRecommendation) {
-        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let entity = NSEntityDescription.entityForName("Payback", inManagedObjectContext: managedContext)
+        let newPayback = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Payback
+        newPayback.sender = settlementRecommendation.from
+        newPayback.receiver = settlementRecommendation.to
+        newPayback.amount_integer_part = settlementRecommendation.amount.integerPart()
+        newPayback.amount_decimal_part = settlementRecommendation.amount.decimalPart()
+        do {
+            try managedContext.save()
+        } catch _ {}
+        self.tableView.reloadData()
     }
     
     func displayActionSheet(settlementRecommendation:SettlementRecommendation) {

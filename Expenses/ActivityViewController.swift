@@ -1,5 +1,5 @@
 //
-//  PaymentsViewController.swift
+//  ActivityViewController.swift
 //  Expenses
 //
 //  Created by Oliver Wilkie on 8/1/16.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class PaymentsViewController: UITableViewController {
+class ActivityViewController: UITableViewController {
     
     var event:Event?
 
@@ -44,6 +44,14 @@ class PaymentsViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func activityItems() -> [ActivityItem] {
+        var activityItems:[ActivityItem] = self.event!.getExpenses().map({$0 as ActivityItem}) + self.event!.getPaybacks().map({$0 as ActivityItem})
+        activityItems.sortInPlace { (a:ActivityItem, b:ActivityItem) -> Bool in
+            return a.getDate().compare(b.getDate()) == NSComparisonResult.OrderedAscending
+        }
+        return activityItems
+    }
 
     // MARK: - Table view data source
 
@@ -52,16 +60,22 @@ class PaymentsViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return event!.getNumberOfExpenses()
+        return activityItems().count
     }
 
-
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath)
-        let expenses = event!.getExpenses()
-        let expense = expenses[indexPath.row]
-        cell.textLabel?.text = expense.details
-        return cell
+        let activityItem = activityItems()[indexPath.row]
+        if activityItem.activityType == .Expense {
+            let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath)
+            let expense = activityItem as! Expense
+            cell.textLabel?.text = expense.details
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("PaybackCell", forIndexPath: indexPath)
+            //let payback = activityItem as! Payback
+            cell.textLabel?.text = "Payback!"
+            return cell
+        }
     }
     
     @IBAction func cancelToPaymentsViewController(segue:UIStoryboardSegue) {
@@ -79,19 +93,19 @@ class PaymentsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this payment?", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Delete", message: "Are you sure you want to delete this?", preferredStyle: .Alert)
             let firstAction = UIAlertAction(title: "Cancel", style: .Default) { (alert: UIAlertAction!) -> Void in
                 // Do nothing
             }
             let secondAction = UIAlertAction(title: "Delete", style: .Destructive) { (alert: UIAlertAction!) -> Void in
                 // Delete the row from the data source
-                let expense = self.event!.getExpenses()[indexPath.row]
-                self.event?.removeExpensesObject(expense)
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let managedContext = appDelegate.managedObjectContext
-                managedContext.deleteObject(expense)
-                
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//                let expense = self.event!.getExpenses()[indexPath.row]
+//                self.event?.removeExpensesObject(expense)
+//                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//                let managedContext = appDelegate.managedObjectContext
+//                managedContext.deleteObject(expense)
+//                
+//                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
             alert.addAction(firstAction)
             alert.addAction(secondAction)
@@ -133,8 +147,8 @@ class PaymentsViewController: UITableViewController {
             destination?.event = event
         } else if segue.identifier == "ViewExpenseSegue" {
             let destination = segue.destinationViewController as? ExpenseDetailsViewController
-            let expenseIndex = tableView.indexPathForSelectedRow?.row
-            destination?.expense = event?.getExpenses()[expenseIndex!]
+            let expenseIndex = tableView.indexPathForSelectedRow!.row
+            destination?.expense = activityItems()[expenseIndex] as! Expense
         }
     }
     

@@ -36,6 +36,9 @@
 		227BBEA31D7352070033EE11 /* SettlementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBEA21D7352070033EE11 /* SettlementService.swift */; };
 		227BBEA61D73894B0033EE11 /* ExpenseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBEA51D73894B0033EE11 /* ExpenseDetailsViewController.swift */; };
 		227BBEA81D73921C0033EE11 /* AmountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBEA71D73921C0033EE11 /* AmountHelper.swift */; };
+		22927D091D752421007141FA /* Payback+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22927D071D752421007141FA /* Payback+CoreDataProperties.swift */; };
+		22927D0A1D752421007141FA /* Payback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22927D081D752421007141FA /* Payback.swift */; };
+		22927D0C1D752824007141FA /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22927D0B1D752824007141FA /* ActivityItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		227BBEA21D7352070033EE11 /* SettlementService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettlementService.swift; sourceTree = "<group>"; };
 		227BBEA51D73894B0033EE11 /* ExpenseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpenseDetailsViewController.swift; path = Expenses/ExpenseDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBEA71D73921C0033EE11 /* AmountHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountHelper.swift; sourceTree = "<group>"; };
+		22927D071D752421007141FA /* Payback+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Payback+CoreDataProperties.swift"; path = "Expenses/Payback+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		22927D081D752421007141FA /* Payback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Payback.swift; path = Expenses/Payback.swift; sourceTree = SOURCE_ROOT; };
+		22927D0B1D752824007141FA /* ActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityItem.swift; path = Expenses/ActivityItem.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,8 @@
 		22D46B981D64BC38003BAB73 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				22927D071D752421007141FA /* Payback+CoreDataProperties.swift */,
+				22927D081D752421007141FA /* Payback.swift */,
 				227BBE5B1D7234DF0033EE11 /* Event+CoreDataProperties.swift */,
 				227BBE571D7234B50033EE11 /* Expense+CoreDataProperties.swift */,
 				227BBE581D7234B50033EE11 /* Expense.swift */,
@@ -167,6 +175,7 @@
 				227BBE361D71495D0033EE11 /* Amount.swift */,
 				227BBE3A1D71495D0033EE11 /* Payment.swift */,
 				227BBE9F1D734F650033EE11 /* SettlementRecommendation.swift */,
+				22927D0B1D752824007141FA /* ActivityItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +280,8 @@
 				2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */,
 				227BBEA31D7352070033EE11 /* SettlementService.swift in Sources */,
 				227BBE2C1D7148710033EE11 /* EventViewController.swift in Sources */,
+				22927D0A1D752421007141FA /* Payback.swift in Sources */,
+				22927D091D752421007141FA /* Payback+CoreDataProperties.swift in Sources */,
 				227BBE2A1D7148710033EE11 /* EventDetailsViewController.swift in Sources */,
 				227BBE591D7234B50033EE11 /* Expense+CoreDataProperties.swift in Sources */,
 				227BBEA01D734F650033EE11 /* SettlementRecommendation.swift in Sources */,
@@ -288,6 +299,7 @@
 				227BBE2B1D7148710033EE11 /* EventsViewController.swift in Sources */,
 				227BBE461D721E5A0033EE11 /* EventPeopleDetailsViewController.swift in Sources */,
 				227BBE3C1D71495D0033EE11 /* Amount.swift in Sources */,
+				22927D0C1D752824007141FA /* ActivityItem.swift in Sources */,
 				227BBE5E1D7251350033EE11 /* DateHelper.swift in Sources */,
 				227BBE3D1D71495D0033EE11 /* Event.swift in Sources */,
 			);

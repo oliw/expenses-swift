@@ -1,5 +1,5 @@
 //
-//  Event+CoreDataProperties.swift
+//  Payback+CoreDataProperties.swift
 //  Expenses
 //
 //  Created by Oliver Wilkie on 8/29/16.
@@ -12,11 +12,12 @@
 import Foundation
 import CoreData
 
-extension Event {
+extension Payback {
 
-    @NSManaged var name: String?
-    @NSManaged var expenses: NSSet?
-    @NSManaged var people: NSSet?
-    @NSManaged var paybacks: NSSet?
+    @NSManaged var amount_integer_part: NSNumber?
+    @NSManaged var amount_decimal_part: NSNumber?
+    @NSManaged var paid_back_at: NSDate?
+    @NSManaged var sender: Person?
+    @NSManaged var receiver: Person?
 
 }
