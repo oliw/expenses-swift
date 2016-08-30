@@ -64,6 +64,8 @@ class SettlementsViewController: UITableViewController {
         newPayback.receiver = settlementRecommendation.to
         newPayback.amount_integer_part = settlementRecommendation.amount.integerPart()
         newPayback.amount_decimal_part = settlementRecommendation.amount.decimalPart()
+        newPayback.paid_back_at = NSDate()
+        self.event?.addPaybacksObject(newPayback)
         do {
             try managedContext.save()
         } catch _ {}

@@ -12,6 +12,7 @@ import CoreData
 class ActivityViewController: UITableViewController {
     
     var event:Event?
+    var activity:Activity?
 
 
     @IBOutlet var addButton: UIBarButtonItem!
@@ -34,6 +35,10 @@ class ActivityViewController: UITableViewController {
         // TODO - Is this the right way to do this?
         let parentTabController = self.tabBarController! as! EventViewController
         event = parentTabController.event
+        
+        let activityService = ActivityService.sharedInstance
+        self.activity = activityService.getActivity(event!)
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -44,14 +49,6 @@ class ActivityViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func activityItems() -> [ActivityItem] {
-        var activityItems:[ActivityItem] = self.event!.getExpenses().map({$0 as ActivityItem}) + self.event!.getPaybacks().map({$0 as ActivityItem})
-        activityItems.sortInPlace { (a:ActivityItem, b:ActivityItem) -> Bool in
-            return a.getDate().compare(b.getDate()) == NSComparisonResult.OrderedAscending
-        }
-        return activityItems
-    }
 
     // MARK: - Table view data source
 
@@ -60,11 +57,11 @@ class ActivityViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activityItems().count
+        return self.activity!.count()
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let activityItem = activityItems()[indexPath.row]
+        let activityItem = activity!.getItem(indexPath.row)
         if activityItem.activityType == .Expense {
             let cell = tableView.dequeueReusableCellWithIdentifier("PaymentCell", forIndexPath: indexPath)
             let expense = activityItem as! Expense
@@ -72,8 +69,11 @@ class ActivityViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("PaybackCell", forIndexPath: indexPath)
-            //let payback = activityItem as! Payback
-            cell.textLabel?.text = "Payback!"
+            let payback = activityItem as! Payback
+            let fromName = payback.sender!.name!
+            let toName = payback.receiver!.name!
+            let amount = AmountHelper.prettyAmount(payback.getAmount())
+            cell.textLabel?.text = "\(fromName) gave \(toName) \(amount)"
             return cell
         }
     }
@@ -148,7 +148,7 @@ class ActivityViewController: UITableViewController {
         } else if segue.identifier == "ViewExpenseSegue" {
             let destination = segue.destinationViewController as? ExpenseDetailsViewController
             let expenseIndex = tableView.indexPathForSelectedRow!.row
-            destination?.expense = activityItems()[expenseIndex] as! Expense
+            destination?.expense = self.activity!.getItem(expenseIndex) as? Expense
         }
     }
     

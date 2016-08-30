@@ -18,4 +18,9 @@ class Payback: NSManagedObject, ActivityItem {
         return self.paid_back_at!
     }
 
+    func getAmount() -> Amount {
+        let integerPart = self.amount_integer_part! as Int
+        let decimalPart = self.amount_decimal_part! as Int
+        return Amount(integerPart: integerPart, decimalPart: decimalPart)
+    }
 }
