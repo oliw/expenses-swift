@@ -99,13 +99,24 @@ class ActivityViewController: UITableViewController {
             }
             let secondAction = UIAlertAction(title: "Delete", style: .Destructive) { (alert: UIAlertAction!) -> Void in
                 // Delete the row from the data source
-//                let expense = self.event!.getExpenses()[indexPath.row]
-//                self.event?.removeExpensesObject(expense)
-//                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                let managedContext = appDelegate.managedObjectContext
-//                managedContext.deleteObject(expense)
-//                
-//                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                let activityItem = self.activity!.getItem(indexPath.row)
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let managedContext = appDelegate.managedObjectContext
+                if activityItem.activityType == .Expense {
+                    let expense = activityItem as! Expense
+                    self.event?.removeExpensesObject(expense)
+                    managedContext.deleteObject(expense)
+                } else {
+                    let payback = activityItem as! Payback
+                    self.event?.removePaybacksObject(payback)
+                    managedContext.deleteObject(payback)
+                }
+                do {
+                    try managedContext.save()
+                } catch _ {}
+                let activityService = ActivityService.sharedInstance
+                self.activity = activityService.getActivity(self.event!)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
             alert.addAction(firstAction)
             alert.addAction(secondAction)
