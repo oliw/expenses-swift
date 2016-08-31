@@ -153,7 +153,7 @@ class ActivityViewController: UITableViewController {
     }
     
     @IBAction func saveExpense(segue:UIStoryboardSegue) {
-        let origin = segue.sourceViewController as! ReviewNewExpenseViewController
+        let origin = segue.sourceViewController as! PaymentDetailsViewController
         let event = origin.event
         let expense = origin.expense!
         event?.addExpensesObject(expense)

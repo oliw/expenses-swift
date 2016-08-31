@@ -49,8 +49,7 @@ class PaymentDetailsViewController: UITableViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "ReviewExpenseSegue" {
-            let destination = segue.destinationViewController as? ReviewNewExpenseViewController
+        if segue.identifier == "saveExpense" {
             let parts = amountTextField.text!.componentsSeparatedByString(".")
             var amountPaidIntegerPart = 0
             var amountPaidFractionalPart = 0
@@ -64,8 +63,6 @@ class PaymentDetailsViewController: UITableViewController, UITextFieldDelegate {
             self.expense?.amount_fraction_part = amountPaidFractionalPart
             self.expense?.details = detailsTextField.text
             self.expense?.date = NSDate()
-            destination?.event = self.event
-            destination?.expense = self.expense
         }
         
     }
