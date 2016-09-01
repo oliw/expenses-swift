@@ -57,6 +57,13 @@ class DataHelper {
         newExpense2.amount_integer_part = 20
         newExpense2.amount_fraction_part = 0
         newEvent.addExpensesObject(newExpense2)
+        // 5. Bodgan paid $10 Oli
+        let newPayback = NSEntityDescription.insertNewObjectForEntityForName("Payback", inManagedObjectContext: context) as! Payback
+        newPayback.receiver = oli
+        newPayback.sender = bogdan
+        newPayback.amount_integer_part = 10
+        newPayback.paid_back_at = DateHelper.fromIso8601("2016-08-27T22:56:57+00:00")
+        newEvent.addPaybacksObject(newPayback)
         do {
             try context.save()
         } catch _ {}
