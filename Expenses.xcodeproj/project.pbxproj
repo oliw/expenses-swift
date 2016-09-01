@@ -35,6 +35,7 @@
 		227BBEA31D7352070033EE11 /* SettlementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBEA21D7352070033EE11 /* SettlementService.swift */; };
 		227BBEA61D73894B0033EE11 /* ExpenseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBEA51D73894B0033EE11 /* ExpenseDetailsViewController.swift */; };
 		227BBEA81D73921C0033EE11 /* AmountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBEA71D73921C0033EE11 /* AmountHelper.swift */; };
+		22874EFB1D77D4E000519069 /* PaybackDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874EFA1D77D4E000519069 /* PaybackDetailsViewController.swift */; };
 		22927D091D752421007141FA /* Payback+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22927D071D752421007141FA /* Payback+CoreDataProperties.swift */; };
 		22927D0A1D752421007141FA /* Payback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22927D081D752421007141FA /* Payback.swift */; };
 		22927D0C1D752824007141FA /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22927D0B1D752824007141FA /* ActivityItem.swift */; };
@@ -73,6 +74,7 @@
 		227BBEA21D7352070033EE11 /* SettlementService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettlementService.swift; sourceTree = "<group>"; };
 		227BBEA51D73894B0033EE11 /* ExpenseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpenseDetailsViewController.swift; path = Expenses/ExpenseDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBEA71D73921C0033EE11 /* AmountHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountHelper.swift; sourceTree = "<group>"; };
+		22874EFA1D77D4E000519069 /* PaybackDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaybackDetailsViewController.swift; path = Expenses/PaybackDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		22927D071D752421007141FA /* Payback+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Payback+CoreDataProperties.swift"; path = "Expenses/Payback+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		22927D081D752421007141FA /* Payback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Payback.swift; path = Expenses/Payback.swift; sourceTree = SOURCE_ROOT; };
 		22927D0B1D752824007141FA /* ActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityItem.swift; path = Expenses/ActivityItem.swift; sourceTree = SOURCE_ROOT; };
@@ -199,6 +201,7 @@
 				227BBE291D7148710033EE11 /* ActivityViewController.swift */,
 				227BBE9B1D734CD10033EE11 /* SettlementsViewController.swift */,
 				227BBEA51D73894B0033EE11 /* ExpenseDetailsViewController.swift */,
+				22874EFA1D77D4E000519069 /* PaybackDetailsViewController.swift */,
 				22511FDE1D65616F00E07886 /* NewExpense */,
 			);
 			path = Controllers;
@@ -305,6 +308,7 @@
 				227BBE3C1D71495D0033EE11 /* Amount.swift in Sources */,
 				22927D0C1D752824007141FA /* ActivityItem.swift in Sources */,
 				227BBE5E1D7251350033EE11 /* DateHelper.swift in Sources */,
+				22874EFB1D77D4E000519069 /* PaybackDetailsViewController.swift in Sources */,
 				227BBE3D1D71495D0033EE11 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

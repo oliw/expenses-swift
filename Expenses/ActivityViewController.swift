@@ -160,6 +160,10 @@ class ActivityViewController: UITableViewController {
             let destination = segue.destinationViewController as? ExpenseDetailsViewController
             let expenseIndex = tableView.indexPathForSelectedRow!.row
             destination?.expense = self.activity!.getItem(expenseIndex) as? Expense
+        } else if segue.identifier == "ViewPaybackSegue" {
+            let destination = segue.destinationViewController as? PaybackDetailsViewController
+            let paybackIndex = tableView.indexPathForSelectedRow!.row
+            destination?.payback = self.activity!.getItem(paybackIndex) as? Payback
         }
     }
     
