@@ -148,7 +148,7 @@ class ActivityViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "NewExpenseSegue" {
             let destinationNav = segue.destinationViewController as? UINavigationController
-            let destination = destinationNav?.topViewController as? ChoosePayerViewController
+            let destination = destinationNav?.topViewController as? NewExpenseViewController
             
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext

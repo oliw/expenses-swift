@@ -10,7 +10,11 @@ import UIKit
 
 class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
 
+    var event:Event?
+    var expense:Expense?
+    
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var payerDetailField: UILabel!
     
     var amountFractional:Int?
     var amountInteger = 0
@@ -19,7 +23,6 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        amountTextField.text = "0.00"
         amountTextField.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
@@ -27,6 +30,12 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        payerDetailField.text = expense?.payer?.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,14 +148,25 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ChoosePayerSegue" {
+            let destinationNav = segue.destinationViewController as! UINavigationController
+            let destination = destinationNav.topViewController as! ChoosePayerViewController
+            destination.event = self.event
+            destination.expense = self.expense
+        }
+        
     }
-    */
+    
+    @IBAction func returnToNewExpenseView(segue:UIStoryboardSegue) {
+        // DO NOTHING
+    }
+    
 
 }

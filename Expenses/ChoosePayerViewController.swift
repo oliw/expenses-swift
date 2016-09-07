@@ -10,8 +10,8 @@ import UIKit
 
 class ChoosePayerViewController: UITableViewController {
 
-    var expense:Expense?
     var event:Event?
+    var expense:Expense?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +41,16 @@ class ChoosePayerViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PayerTableCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("PayerCell", forIndexPath: indexPath)
         let person = event!.getPeople()[indexPath.row]
+        if expense?.payer == person {
+            cell.selected = true
+            cell.accessoryType = .Checkmark
+            
+        } else {
+            cell.selected = false
+            cell.accessoryType = .None
+        }
         cell.textLabel?.text = person.name
         return cell
     }
@@ -81,9 +89,6 @@ class ChoosePayerViewController: UITableViewController {
         return true
     }
     */
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    }
 
     
     // MARK: - Navigation
@@ -92,13 +97,10 @@ class ChoosePayerViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "ChoosePeopleSegue" {
-            let selectedIndex = self.tableView.indexPathForSelectedRow
-            let selectedPerson = self.event?.getPeople()[selectedIndex!.row]
-            self.expense!.payer = selectedPerson
-            let destination = segue.destinationViewController as? ChoosePeopleViewController
-            destination?.expense = self.expense
-            destination?.event = self.event
+        if segue.identifier == "selectPayerSegue" {
+            let selectedIndex = tableView.indexPathForSelectedRow
+            let payer = event?.getPeople()[selectedIndex!.row]
+            expense?.payer = payer
         }
     }
     
