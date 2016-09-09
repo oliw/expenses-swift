@@ -133,7 +133,7 @@ class EventsViewController: UITableViewController {
     }
     
     @IBAction func saveEventDetail(segue:UIStoryboardSegue) {
-        if let eventDetailsViewController = segue.sourceViewController as? EventPeopleDetailsViewController {
+        if let eventDetailsViewController = segue.sourceViewController as? PeopleViewController {
             
             //add the new player to the players array
             if let event = eventDetailsViewController.event {

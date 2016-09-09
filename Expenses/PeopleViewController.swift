@@ -1,5 +1,5 @@
 //
-//  EventPeopleDetailsViewController.swift
+//  PeopleViewController.swift
 //  Expenses
 //
 //  Created by Oliver Wilkie on 8/27/16.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EventPeopleDetailsViewController: UITableViewController {
+class PeopleViewController: UITableViewController {
     
     var event:Event?
     
@@ -74,17 +74,21 @@ class EventPeopleDetailsViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return event!.getNumberOfPeople()
+        return event!.getNumberOfPeople() + 1
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("peopleCell", forIndexPath: indexPath)
-
-        let person = event!.getPeople()[indexPath.row]
-        cell.textLabel?.text = person.name
-
-        return cell
+        if indexPath.row < event!.getNumberOfPeople() {
+            let cell = tableView.dequeueReusableCellWithIdentifier("peopleCell", forIndexPath: indexPath)
+            
+            let person = event!.getPeople()[indexPath.row]
+            cell.textLabel?.text = person.name
+            
+            return cell
+        } else {
+            return tableView.dequeueReusableCellWithIdentifier("addPeopleCell", forIndexPath: indexPath)
+        }
     }
     
 

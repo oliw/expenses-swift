@@ -27,6 +27,8 @@ class EventDetailsViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 {
             nameTextField.becomeFirstResponder()
+        } else if indexPath.section == 1 {
+            self.performSegueWithIdentifier("viewPeopleSegue", sender: self)
         }
     }
 
@@ -38,9 +40,9 @@ class EventDetailsViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "addPeopleSegue" {
+        if segue.identifier == "viewPeopleSegue" {
             event?.name = nameTextField.text
-            let destination = segue.destinationViewController as? EventPeopleDetailsViewController
+            let destination = segue.destinationViewController as? PeopleViewController
             destination?.event = event
         }
     }
