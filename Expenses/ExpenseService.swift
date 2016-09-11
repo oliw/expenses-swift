@@ -24,6 +24,7 @@ class ExpenseService {
         let managedContext = appDelegate.managedObjectContext
         let entity = NSEntityDescription.entityForName("Expense", inManagedObjectContext: managedContext)
         let expense = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Expense
+        expense.date = NSDate()
         event.addExpensesObject(expense)
         return expense
     }

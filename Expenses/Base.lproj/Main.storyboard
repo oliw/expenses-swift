@@ -64,23 +64,8 @@
                         <sections>
                             <tableViewSection id="x96-Q1-1en">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dmS-G6-MI9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Amount Cell" id="16E-CB-651">
                                         <rect key="frame" x="0.0" y="99" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dmS-G6-MI9" id="CPp-f7-eck">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zl7-xp-1hU">
-                                                    <rect key="frame" x="18" y="7" width="574" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="16E-CB-651">
-                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="16E-CB-651" id="NpB-dk-5Fa">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -90,6 +75,21 @@
                                                     <rect key="frame" x="15" y="7" width="577" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Details Cell" id="dmS-G6-MI9">
+                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dmS-G6-MI9" id="CPp-f7-eck">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Details" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zl7-xp-1hU">
+                                                    <rect key="frame" x="18" y="7" width="574" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -156,7 +156,7 @@
                             </tableViewSection>
                             <tableViewSection id="ttN-DS-H1m">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Kzm-In-Wzy" detailTextLabel="yB0-px-VAZ" style="IBUITableViewCellStyleValue1" id="jvU-Lb-vHx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Date Field" textLabel="Kzm-In-Wzy" detailTextLabel="yB0-px-VAZ" style="IBUITableViewCellStyleValue1" id="jvU-Lb-vHx" userLabel="Date Field">
                                         <rect key="frame" x="0.0" y="347" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jvU-Lb-vHx" id="AgI-2L-wDT">
@@ -180,18 +180,21 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mq5-wK-AVa">
-                                        <rect key="frame" x="0.0" y="391" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Date Picker" rowHeight="121" id="mq5-wK-AVa">
+                                        <rect key="frame" x="0.0" y="391" width="320" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mq5-wK-AVa" id="T2a-PP-298">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ouM-0P-eGr">
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ouM-0P-eGr">
                                                     <rect key="frame" x="0.0" y="-86" width="320" height="216"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="494396000.73800498">
                                                         <!--2016-09-01 04:13:20 +0000-->
                                                     </date>
+                                                    <connections>
+                                                        <action selector="onDatePickerValueChange:" destination="Mo0-fu-vhu" eventType="valueChanged" id="0mY-QN-SVX"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -218,6 +221,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="amountTextField" destination="spq-BH-QL9" id="dih-OH-cuj"/>
+                        <outlet property="dateDetailField" destination="yB0-px-VAZ" id="Khx-ZN-OB7"/>
+                        <outlet property="datePicker" destination="ouM-0P-eGr" id="kyc-uv-ja8"/>
                         <outlet property="payerDetailField" destination="60t-DM-c1a" id="nEa-mn-KWT"/>
                         <outlet property="peopleDetailField" destination="dM5-jK-eJe" id="x4x-1s-hRq"/>
                         <segue destination="yfH-Hb-lPw" kind="unwind" identifier="cancelExitSegue" unwindAction="returnToActivityView:" id="vgf-9c-btI"/>
