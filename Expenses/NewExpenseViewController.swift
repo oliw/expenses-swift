@@ -23,6 +23,7 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var peopleDetailField: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateDetailField: UILabel!
+    @IBOutlet weak var descriptionTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,6 +158,11 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     
     
     @IBAction func saveButtonPressed(sender: AnyObject) {
+        expense?.details = descriptionTextField.text
+        expense?.amount_integer_part = amountInteger
+        expense?.amount_fraction_part = amountFractional
+        expense?.date = datePicker.date
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         do {

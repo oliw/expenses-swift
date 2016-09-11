@@ -223,6 +223,7 @@
                         <outlet property="amountTextField" destination="spq-BH-QL9" id="dih-OH-cuj"/>
                         <outlet property="dateDetailField" destination="yB0-px-VAZ" id="Khx-ZN-OB7"/>
                         <outlet property="datePicker" destination="ouM-0P-eGr" id="kyc-uv-ja8"/>
+                        <outlet property="descriptionTextField" destination="zl7-xp-1hU" id="YKO-cd-Cdj"/>
                         <outlet property="payerDetailField" destination="60t-DM-c1a" id="nEa-mn-KWT"/>
                         <outlet property="peopleDetailField" destination="dM5-jK-eJe" id="x4x-1s-hRq"/>
                         <segue destination="yfH-Hb-lPw" kind="unwind" identifier="cancelExitSegue" unwindAction="returnToActivityView:" id="vgf-9c-btI"/>
