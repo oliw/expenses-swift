@@ -279,6 +279,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="LG9-SA-jh0" id="LLI-7J-sKt"/>
                         <segue destination="h98-6C-frl" kind="unwind" unwindAction="returnToNewExpenseView:" id="TSj-im-l23"/>
                     </connections>
                 </tableViewController>
