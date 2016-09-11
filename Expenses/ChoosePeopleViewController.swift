@@ -18,25 +18,18 @@ class ChoosePeopleViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
         checkedPeople.removeAll()
         expense?.getParticipants().forEach({person -> Void in
             checkedPeople.append(person)
         })
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -62,21 +55,15 @@ class ChoosePeopleViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let person = event!.getPeople()[indexPath.row]
-        cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
-        if !checkedPeople.contains(person) {
+        if checkedPeople.contains(person) {
+            let x = checkedPeople.indexOf(person)
+            checkedPeople.removeAtIndex(x!)
+        } else {
             checkedPeople.append(person)
         }
-    }
-    
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        let person = event!.getPeople()[indexPath.row]
-        cell?.accessoryType = UITableViewCellAccessoryType.None
-        if let x = checkedPeople.indexOf(person) {
-            checkedPeople.removeAtIndex(x)
-        }
+        tableView.reloadData()
     }
 
     /*
@@ -113,6 +100,16 @@ class ChoosePeopleViewController: UITableViewController {
         return true
     }
     */
+    
+    // MARK: - Action
+    
+    @IBAction func onDoneButtonPressed(sender: AnyObject) {
+        let participants = expense?.getParticipants()
+        participants?.forEach { expense?.removeParticipantsObject($0) }
+        checkedPeople.forEach { expense?.addParticipantsObject($0) }
+        
+        performSegueWithIdentifier("addPeopleExitSegue", sender: sender)
+    }
 
     
     // MARK: - Navigation

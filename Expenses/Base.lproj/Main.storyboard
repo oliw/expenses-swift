@@ -149,7 +149,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="z4r-z9-85j" kind="presentation" id="nb5-7s-rnR"/>
+                                            <segue destination="o8q-AX-WSx" kind="presentation" identifier="addPeopleSegue" id="nb5-7s-rnR"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -219,6 +219,7 @@
                     <connections>
                         <outlet property="amountTextField" destination="spq-BH-QL9" id="dih-OH-cuj"/>
                         <outlet property="payerDetailField" destination="60t-DM-c1a" id="nEa-mn-KWT"/>
+                        <outlet property="peopleDetailField" destination="dM5-jK-eJe" id="x4x-1s-hRq"/>
                         <segue destination="yfH-Hb-lPw" kind="unwind" identifier="cancelExitSegue" unwindAction="returnToActivityView:" id="vgf-9c-btI"/>
                         <segue destination="yfH-Hb-lPw" kind="unwind" identifier="saveExitSegue" unwindAction="returnToActivityView:" id="XNc-Gn-Dyq"/>
                     </connections>
@@ -231,18 +232,27 @@
         <!--Recipients-->
         <scene sceneID="CO2-Jb-rYV">
             <objects>
-                <tableViewController id="z4r-z9-85j" sceneMemberID="viewController">
+                <tableViewController id="z4r-z9-85j" customClass="ChoosePeopleViewController" customModule="Expenses" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YMs-fp-rbC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="685-1m-Uum">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" textLabel="2XV-wT-cm6" style="IBUITableViewCellStyleDefault" id="685-1m-Uum" userLabel="Person Cell">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="685-1m-Uum" id="fo4-VT-MlP">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2XV-wT-cm6">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -251,11 +261,26 @@
                             <outlet property="delegate" destination="z4r-z9-85j" id="Bw3-EN-cg4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipients" id="Shk-gZ-id3"/>
+                    <navigationItem key="navigationItem" title="Recipients" id="Shk-gZ-id3">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YSX-ej-J95">
+                            <connections>
+                                <segue destination="h98-6C-frl" kind="unwind" identifier="addPeopleExitSegue" unwindAction="returnToNewExpenseView:" id="com-yt-jp4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="LG9-SA-jh0">
+                            <connections>
+                                <action selector="onDoneButtonPressed:" destination="z4r-z9-85j" id="hTn-on-mQ7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="h98-6C-frl" kind="unwind" unwindAction="returnToNewExpenseView:" id="TSj-im-l23"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWx-lT-yK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="h98-6C-frl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4080" y="-1113"/>
+            <point key="canvasLocation" x="4612" y="-1113"/>
         </scene>
         <!--Payer-->
         <scene sceneID="tPQ-kN-L8V">
@@ -282,9 +307,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Iwa-lK-lg3" kind="unwind" identifier="selectPayerSegue" unwindAction="returnToNewExpenseView:" id="Y41-T1-WYH"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -295,15 +317,18 @@
                     <navigationItem key="navigationItem" title="Payer" id="uvY-sg-7d1">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="a18-8p-KqK">
                             <connections>
-                                <segue destination="Iwa-lK-lg3" kind="unwind" identifier="" unwindAction="returnToNewExpenseView:" id="jkj-1a-EOd"/>
+                                <segue destination="Iwa-lK-lg3" kind="unwind" identifier="cancelExitSegue" unwindAction="returnToNewExpenseView:" id="jkj-1a-EOd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Iwa-lK-lg3" kind="unwind" identifier="addPayerExitSegue" unwindAction="returnToNewExpenseView:" id="wie-jM-6Gi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSN-VW-nUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Iwa-lK-lg3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4892" y="-1816"/>
+            <point key="canvasLocation" x="4600" y="-1816"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="XsN-ot-LBs">
@@ -1022,6 +1047,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tif-fo-X1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2845" y="1117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eR8-BY-p2U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o8q-AX-WSx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9A-IV-xXa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="z4r-z9-85j" kind="relationship" relationship="rootViewController" id="Fbp-AH-FM4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c8J-YT-tQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4080" y="-1113"/>
         </scene>
     </scenes>
     <resources>

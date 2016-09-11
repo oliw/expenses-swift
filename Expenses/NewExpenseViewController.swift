@@ -15,6 +15,7 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var payerDetailField: UILabel!
+    @IBOutlet weak var peopleDetailField: UILabel!
     
     var amountFractional:Int?
     var amountInteger = 0
@@ -23,11 +24,13 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        amountTextField.delegate = self
-        
         if expense == nil {
             expense = ExpenseService.sharedInstance.initExpense(event!)
         }
+        
+        amountTextField.delegate = self
+        payerDetailField.text = expense?.payer?.name
+        peopleDetailField.text = "\(expense!.getNumberOfParticipants())"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,8 +41,6 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        payerDetailField.text = expense?.payer?.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -181,9 +182,13 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destinationNav = segue.destinationViewController as! UINavigationController
         if segue.identifier == "ChoosePayerSegue" {
-            let destinationNav = segue.destinationViewController as! UINavigationController
             let destination = destinationNav.topViewController as! ChoosePayerViewController
+            destination.event = self.event
+            destination.expense = self.expense
+        } else if segue.identifier == "addPeopleSegue" {
+            let destination = destinationNav.topViewController as! ChoosePeopleViewController
             destination.event = self.event
             destination.expense = self.expense
         }
@@ -191,7 +196,11 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func returnToNewExpenseView(segue:UIStoryboardSegue) {
-        // DO NOTHING
+        if segue.identifier == "addPeopleExitSegue" {
+            peopleDetailField.text = "\(expense!.getNumberOfParticipants())"
+        } else if segue.identifier == "addPayerExitSegue" {
+            payerDetailField.text = expense?.payer?.name
+        }
     }
     
 
