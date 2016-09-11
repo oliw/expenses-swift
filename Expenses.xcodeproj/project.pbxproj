@@ -19,7 +19,6 @@
 		227BBE2D1D7148710033EE11 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE291D7148710033EE11 /* ActivityViewController.swift */; };
 		227BBE321D7148990033EE11 /* ChoosePayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE2E1D7148990033EE11 /* ChoosePayerViewController.swift */; };
 		227BBE331D7148990033EE11 /* ChoosePeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE2F1D7148990033EE11 /* ChoosePeopleViewController.swift */; };
-		227BBE341D7148990033EE11 /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE301D7148990033EE11 /* PaymentDetailsViewController.swift */; };
 		227BBE3C1D71495D0033EE11 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE361D71495D0033EE11 /* Amount.swift */; };
 		227BBE3D1D71495D0033EE11 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE371D71495D0033EE11 /* Event.swift */; };
 		227BBE401D71495D0033EE11 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227BBE3A1D71495D0033EE11 /* Payment.swift */; };
@@ -46,6 +45,7 @@
 		22D1B5DA1D788C9300C9AB15 /* AmountField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D1B5D91D788C9300C9AB15 /* AmountField.swift */; };
 		22F8A6751D85E14C00030319 /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8A6741D85E14C00030319 /* PersonService.swift */; };
 		22F8A6771D85EB2000030319 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8A6761D85EB2000030319 /* EventService.swift */; };
+		22F8A6791D85FB0700030319 /* ExpenseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8A6781D85FB0700030319 /* ExpenseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,6 @@
 		227BBE291D7148710033EE11 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = Expenses/ActivityViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE2E1D7148990033EE11 /* ChoosePayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePayerViewController.swift; path = Expenses/ChoosePayerViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE2F1D7148990033EE11 /* ChoosePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChoosePeopleViewController.swift; path = Expenses/ChoosePeopleViewController.swift; sourceTree = SOURCE_ROOT; };
-		227BBE301D7148990033EE11 /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaymentDetailsViewController.swift; path = Expenses/PaymentDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		227BBE361D71495D0033EE11 /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Amount.swift; path = Expenses/Amount.swift; sourceTree = SOURCE_ROOT; };
 		227BBE371D71495D0033EE11 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Expenses/Event.swift; sourceTree = SOURCE_ROOT; };
 		227BBE3A1D71495D0033EE11 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Payment.swift; path = Expenses/Payment.swift; sourceTree = SOURCE_ROOT; };
@@ -90,6 +89,7 @@
 		22D1B5D91D788C9300C9AB15 /* AmountField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmountField.swift; path = Expenses/AmountField.swift; sourceTree = SOURCE_ROOT; };
 		22F8A6741D85E14C00030319 /* PersonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
 		22F8A6761D85EB2000030319 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		22F8A6781D85FB0700030319 /* ExpenseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,6 @@
 			children = (
 				227BBE2E1D7148990033EE11 /* ChoosePayerViewController.swift */,
 				227BBE2F1D7148990033EE11 /* ChoosePeopleViewController.swift */,
-				227BBE301D7148990033EE11 /* PaymentDetailsViewController.swift */,
 				22D1B5D71D78817800C9AB15 /* NewExpenseViewController.swift */,
 			);
 			name = NewExpense;
@@ -165,6 +164,7 @@
 				22927D0D1D7531D6007141FA /* ActivityService.swift */,
 				22F8A6741D85E14C00030319 /* PersonService.swift */,
 				22F8A6761D85EB2000030319 /* EventService.swift */,
+				22F8A6781D85FB0700030319 /* ExpenseService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -298,10 +298,10 @@
 				227BBE5C1D7234DF0033EE11 /* Event+CoreDataProperties.swift in Sources */,
 				22927D101D7533DB007141FA /* Activity.swift in Sources */,
 				227BBE5A1D7234B50033EE11 /* Expense.swift in Sources */,
-				227BBE341D7148990033EE11 /* PaymentDetailsViewController.swift in Sources */,
 				2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */,
 				227BBEA31D7352070033EE11 /* SettlementService.swift in Sources */,
 				227BBE2C1D7148710033EE11 /* EventViewController.swift in Sources */,
+				22F8A6791D85FB0700030319 /* ExpenseService.swift in Sources */,
 				22927D0A1D752421007141FA /* Payback.swift in Sources */,
 				22927D091D752421007141FA /* Payback+CoreDataProperties.swift in Sources */,
 				227BBE2A1D7148710033EE11 /* EventDetailsViewController.swift in Sources */,

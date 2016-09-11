@@ -149,12 +149,6 @@ class ActivityViewController: UITableViewController {
         if segue.identifier == "NewExpenseSegue" {
             let destinationNav = segue.destinationViewController as? UINavigationController
             let destination = destinationNav?.topViewController as? NewExpenseViewController
-            
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            let entity = NSEntityDescription.entityForName("Expense", inManagedObjectContext: managedContext)
-            let newExpense = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Expense
-            destination?.expense = newExpense
             destination?.event = event
         } else if segue.identifier == "ViewExpenseSegue" {
             let destination = segue.destinationViewController as? ExpenseDetailsViewController
@@ -167,25 +161,9 @@ class ActivityViewController: UITableViewController {
         }
     }
     
-    @IBAction func saveExpense(segue:UIStoryboardSegue) {
-        let origin = segue.sourceViewController as! PaymentDetailsViewController
-        let event = origin.event
-        let expense = origin.expense!
-        event?.addExpensesObject(expense)
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        do {
-            try managedContext.save()
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
+    @IBAction func returnToActivityView(segue:UIStoryboardSegue) {
+        if segue.identifier == "saveExitSegue" {
+            self.tableView.reloadData()
         }
-        self.tableView.reloadData()
     }
-    
-    @IBAction func cancelExpense(segue:UIStoryboardSegue) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        managedContext.rollback()
-    }
-
 }

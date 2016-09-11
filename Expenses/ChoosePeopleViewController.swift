@@ -121,13 +121,6 @@ class ChoosePeopleViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "AddExpenseDetailsSegue" {
-            let destination = segue.destinationViewController as? PaymentDetailsViewController
-            self.expense?.replaceParticipants(checkedPeople)
-            destination?.event = self.event
-            destination?.expense = self.expense
-        }
-        
     }
 
 }

@@ -24,7 +24,11 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         amountTextField.delegate = self
-
+        
+        if expense == nil {
+            expense = ExpenseService.sharedInstance.initExpense(event!)
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,6 +46,8 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK :- Payment Details Text Field
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
@@ -147,7 +153,27 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
     */
-
+    
+    // MARK: - Actions
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        managedContext.rollback()
+        performSegueWithIdentifier("cancelExitSegue", sender: sender)
+    }
+    
+    
+    @IBAction func saveButtonPressed(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        do {
+            try managedContext.save()
+            performSegueWithIdentifier("saveExitSegue", sender: sender)
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
     
     // MARK: - Navigation
 
