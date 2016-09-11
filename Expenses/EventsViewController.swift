@@ -17,26 +17,11 @@ class EventsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        events = EventService.sharedInstance.getEvents()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Event")
-        do {
-            let results = try managedContext.executeFetchRequest(fetchRequest)
-            events = results as! [Event]
-        } catch let error as NSError {
-            print("Could not save \(error), \(error.userInfo)")
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,14 +65,9 @@ class EventsViewController: UITableViewController {
             }
             let secondAction = UIAlertAction(title: "Delete", style: .Destructive) { (alert: UIAlertAction!) -> Void in
                 let event = self.events[indexPath.row]
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let managedContext = appDelegate.managedObjectContext
-                managedContext.deleteObject(event)
-                self.events.removeAtIndex(indexPath.row)
-                do {
-                    try managedContext.save()
-                } catch _ {}
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                EventService.sharedInstance.deleteEvent(event)
+                self.events = EventService.sharedInstance.getEvents()
+                tableView.reloadData()
             }
             alert.addAction(firstAction)
             alert.addAction(secondAction)
@@ -129,25 +109,10 @@ class EventsViewController: UITableViewController {
         }
     }
     
-    @IBAction func cancelToEventsViewController(segue:UIStoryboardSegue) {
-    }
-    
-    @IBAction func saveEventDetail(segue:UIStoryboardSegue) {
-        if let eventDetailsViewController = segue.sourceViewController as? PeopleViewController {
-            
-            //add the new player to the players array
-            if let event = eventDetailsViewController.event {
-                
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let managedContext = appDelegate.managedObjectContext
-                do {
-                    try managedContext.save()
-                    events.append(event)
-                } catch _ {}
-                
-                tableView.reloadData()
-            }
+    @IBAction func returnToEventsView(segue:UIStoryboardSegue) {
+        if segue.identifier == "saveExitSegue" {
+            self.events = EventService.sharedInstance.getEvents()
+            tableView.reloadData()
         }
     }
-
 }

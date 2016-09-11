@@ -34,39 +34,6 @@ class PeopleViewController: UITableViewController {
     
     // MARK:- Actions
 
-    @IBAction func addPerson(sender: AnyObject) {
-        let alert = UIAlertController(title: "New Person",
-                                      message: "Add a new person",
-                                      preferredStyle: .Alert)
-        
-        let saveAction = UIAlertAction(title: "Save", style: .Default, handler: {(action:UIAlertAction) -> Void in
-            let textField = alert.textFields!.first
-            let personName = textField?.text
-            
-            // create a person in the context
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            let newPerson = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: managedContext) as! Person
-            newPerson.name = personName
-            self.event?.addPeopleObject(newPerson)
-            
-            self.tableView.reloadData()
-            
-            return
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: {(action:UIAlertAction) -> Void in
-            return
-        })
-        
-        alert.addTextFieldWithConfigurationHandler({(textField:UITextField) -> Void in})
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        presentViewController(alert, animated: true, completion: nil)
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -131,14 +98,24 @@ class PeopleViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "addPersonSegue" {
+            let navigationRootController = segue.destinationViewController as! UINavigationController
+            let addPersonController = navigationRootController.topViewController as! AddPeopleViewController
+            addPersonController.event = self.event
+        }
+        
     }
-    */
-
+    
+    @IBAction func prepareForAddPeopleUnwind(segue: UIStoryboardSegue) {
+        if segue.identifier == "doneExitSegue" {
+            tableView.reloadData()
+        }
+    }
 }

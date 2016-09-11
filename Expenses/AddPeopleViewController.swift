@@ -9,45 +9,33 @@
 import UIKit
 import ContactsUI
 
-class AddPeopleViewController: UIViewController, UITableViewDataSource, CNContactPickerDelegate, UITextFieldDelegate {
+class AddPeopleViewController: UITableViewController, CNContactPickerDelegate {
     
-    @IBOutlet weak var contactsTableView: UITableView!
+    var event:Event?
+    
     @IBOutlet weak var textField: UITextField!
     
-    var selectedNames: [String]?
-
+    @IBAction func onSaveButtonPress(sender: AnyObject) {
+        let name = textField.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        if name != nil && !name!.isEmpty {
+            PersonService.sharedInstance.createPerson(name!, event: event!)
+        }
+        performSegueWithIdentifier("doneExitSegue", sender: sender)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        contactsTableView.dataSource = self
-        textField.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Text Field
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        // TODO Add new selectedName
-        var input = textField.text!
-        input = input.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        if input.characters.last != nil && input.characters.last! != "," {
-            let names = input.componentsSeparatedByString(",").map({word in word.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())})
-            textField.text = names.joinWithSeparator(", ")+", "
-        }
-        return true
-    }
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        NSLog("Nothing")
     }
     
     // MARK: - Contact Picker
@@ -65,29 +53,19 @@ class AddPeopleViewController: UIViewController, UITableViewDataSource, CNContac
         if contact.familyName != "" {
             personName += " " + contact.familyName
         }
-        
-        var input = textField.text!
-        input = input.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        var names = input.componentsSeparatedByString(",").map({word in word.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())})
-        names = names.filter({name in name != ""})
-        names.append(personName)
-        textField.text = names.joinWithSeparator(", ")+", "
+        textField.text = personName
     }
     
     // MARK: - Table
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 0
+//    }
     
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
     // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier("Contact Cell")!
-    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -95,6 +73,6 @@ class AddPeopleViewController: UIViewController, UITableViewDataSource, CNContac
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }

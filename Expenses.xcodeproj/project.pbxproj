@@ -44,6 +44,8 @@
 		22927D101D7533DB007141FA /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22927D0F1D7533DB007141FA /* Activity.swift */; };
 		22D1B5D81D78817800C9AB15 /* NewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D1B5D71D78817800C9AB15 /* NewExpenseViewController.swift */; };
 		22D1B5DA1D788C9300C9AB15 /* AmountField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D1B5D91D788C9300C9AB15 /* AmountField.swift */; };
+		22F8A6751D85E14C00030319 /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8A6741D85E14C00030319 /* PersonService.swift */; };
+		22F8A6771D85EB2000030319 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8A6761D85EB2000030319 /* EventService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		22927D0F1D7533DB007141FA /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = Expenses/Activity.swift; sourceTree = SOURCE_ROOT; };
 		22D1B5D71D78817800C9AB15 /* NewExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewExpenseViewController.swift; path = Expenses/NewExpenseViewController.swift; sourceTree = SOURCE_ROOT; };
 		22D1B5D91D788C9300C9AB15 /* AmountField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmountField.swift; path = Expenses/AmountField.swift; sourceTree = SOURCE_ROOT; };
+		22F8A6741D85E14C00030319 /* PersonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
+		22F8A6761D85EB2000030319 /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 			children = (
 				227BBEA21D7352070033EE11 /* SettlementService.swift */,
 				22927D0D1D7531D6007141FA /* ActivityService.swift */,
+				22F8A6741D85E14C00030319 /* PersonService.swift */,
+				22F8A6761D85EB2000030319 /* EventService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 				22927D0E1D7531D6007141FA /* ActivityService.swift in Sources */,
 				227BBE591D7234B50033EE11 /* Expense+CoreDataProperties.swift in Sources */,
 				221F11EC1D8261CE005E9967 /* AddPeopleViewController.swift in Sources */,
+				22F8A6751D85E14C00030319 /* PersonService.swift in Sources */,
 				22D1B5DA1D788C9300C9AB15 /* AmountField.swift in Sources */,
 				227BBEA01D734F650033EE11 /* SettlementRecommendation.swift in Sources */,
 				227BBE2D1D7148710033EE11 /* ActivityViewController.swift in Sources */,
@@ -311,6 +318,7 @@
 				227BBE321D7148990033EE11 /* ChoosePayerViewController.swift in Sources */,
 				2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */,
 				227BBE441D72042D0033EE11 /* DataHelper.swift in Sources */,
+				22F8A6771D85EB2000030319 /* EventService.swift in Sources */,
 				227BBE4A1D7222130033EE11 /* Person.swift in Sources */,
 				227BBE331D7148990033EE11 /* ChoosePeopleViewController.swift in Sources */,
 				227BBE491D7222130033EE11 /* Person+CoreDataProperties.swift in Sources */,
