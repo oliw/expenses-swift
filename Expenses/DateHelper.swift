@@ -9,22 +9,22 @@
 import Foundation
 
 class DateHelper {
-    static func fromIso8601(string:String) -> NSDate? {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    static func fromIso8601(_ string:String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
-        return dateFormatter.dateFromString(string)
+        return dateFormatter.date(from: string)
     }
     
-    static func prettyDate(date: NSDate) -> String {
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .NoStyle
-        formatter.dateStyle = .ShortStyle
+    static func prettyDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .short
         formatter.doesRelativeDateFormatting = true
         
-        let locale = NSLocale.currentLocale()
+        let locale = Locale.current
         formatter.locale = locale
         
-        return formatter.stringFromDate(date)
+        return formatter.string(from: date)
     }
 }

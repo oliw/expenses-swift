@@ -41,7 +41,7 @@ struct Amount {
         return Amount(integerPart: 0,decimalPart: 1)
     }
     
-    static func fromDecimalValue(value: Int) -> Amount {
+    static func fromDecimalValue(_ value: Int) -> Amount {
         let integerPart = value / Amount.decimalsInInteger
         let decimalPart = value % Amount.decimalsInInteger
         return Amount(integerPart: integerPart, decimalPart: decimalPart)
@@ -78,6 +78,6 @@ func <(left:Amount, right:Amount) -> Bool {
     return left.decimalValue < right.decimalValue
 }
 
-func abs(amount:Amount) -> Amount {
+func abs(_ amount:Amount) -> Amount {
     return Amount.fromDecimalValue(abs(amount.decimalValue))
 }

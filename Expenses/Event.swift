@@ -20,8 +20,8 @@ class Event: NSManagedObject {
         return self.people!.allObjects as! [Person]
     }
     
-    @NSManaged func addPeopleObject(value:Person)
-    @NSManaged func removePeopleObject(value:Person)
+    @NSManaged func addPeopleObject(_ value:Person)
+    @NSManaged func removePeopleObject(_ value:Person)
     
     func getNumberOfExpenses() -> Int {
         return self.expenses!.count
@@ -39,9 +39,9 @@ class Event: NSManagedObject {
         return self.paybacks!.count
     }
     
-    @NSManaged func addPaybacksObject(value:Payback)
-    @NSManaged func removePaybacksObject(value:Payback)
+    @NSManaged func addPaybacksObject(_ value:Payback)
+    @NSManaged func removePaybacksObject(_ value:Payback)
     
-    @NSManaged func addExpensesObject(value:Expense)
-    @NSManaged func removeExpensesObject(value:Expense)
+    @NSManaged func addExpensesObject(_ value:Expense)
+    @NSManaged func removeExpensesObject(_ value:Expense)
 }

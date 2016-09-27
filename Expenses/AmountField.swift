@@ -18,7 +18,7 @@ class AmountField: UITextField {
     }
     */
     
-    override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         return false
     }
 }

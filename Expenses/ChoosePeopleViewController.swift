@@ -27,7 +27,7 @@ class ChoosePeopleViewController: UITableViewController {
         checkedPeopleChanged()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
@@ -38,42 +38,42 @@ class ChoosePeopleViewController: UITableViewController {
     
     func checkedPeopleChanged() {
         if checkedPeople.isEmpty {
-            doneButton.enabled = false
-            doneButton.tintColor = UIColor.clearColor()
+            doneButton.isEnabled = false
+            doneButton.tintColor = UIColor.clear
         } else {
-            doneButton.enabled = true
+            doneButton.isEnabled = true
             doneButton.tintColor = nil
         }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return event!.getPeople().count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PersonCell", forIndexPath: indexPath)
-        let person = event!.getPeople()[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath)
+        let person = event!.getPeople()[(indexPath as NSIndexPath).row]
         cell.textLabel?.text = person.name
         if (checkedPeople.contains(person)) {
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
         } else {
-            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.accessoryType = UITableViewCellAccessoryType.none
         }
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let person = event!.getPeople()[indexPath.row]
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let person = event!.getPeople()[(indexPath as NSIndexPath).row]
         if checkedPeople.contains(person) {
-            let x = checkedPeople.indexOf(person)
-            checkedPeople.removeAtIndex(x!)
+            let x = checkedPeople.index(of: person)
+            checkedPeople.remove(at: x!)
         } else {
             checkedPeople.append(person)
         }
@@ -83,19 +83,19 @@ class ChoosePeopleViewController: UITableViewController {
     
     // MARK: - Action
     
-    @IBAction func onDoneButtonPressed(sender: AnyObject) {
+    @IBAction func onDoneButtonPressed(_ sender: AnyObject) {
         let participants = expense?.getParticipants()
         participants?.forEach { expense?.removeParticipantsObject($0) }
         checkedPeople.forEach { expense?.addParticipantsObject($0) }
         
-        performSegueWithIdentifier("addPeopleExitSegue", sender: sender)
+        performSegue(withIdentifier: "addPeopleExitSegue", sender: sender)
     }
 
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

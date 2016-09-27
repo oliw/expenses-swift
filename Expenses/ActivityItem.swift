@@ -9,11 +9,11 @@
 import Foundation
 
 enum ActivityItemType {
-    case Expense
-    case Payback
+    case expense
+    case payback
 }
 
 protocol ActivityItem {
-    func getDate() -> NSDate
+    func getDate() -> Date
     var activityType: ActivityItemType { get }
 }

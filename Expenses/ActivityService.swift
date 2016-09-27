@@ -18,21 +18,21 @@ class ActivityService {
         return Singleton.instance
     }
     
-    func getActivity(event: Event) -> Activity {
+    func getActivity(_ event: Event) -> Activity {
         return Activity(expenses: event.getExpenses(), paybacks: event.getPaybacks())
     }
     
-    func deleteActivityItem(item: ActivityItem, event: Event) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    func deleteActivityItem(_ item: ActivityItem, event: Event) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        if item.activityType == .Expense {
+        if item.activityType == .expense {
             let expense = item as! Expense
             event.removeExpensesObject(expense)
-            managedContext.deleteObject(expense)
+            managedContext.delete(expense)
         } else {
             let payback = item as! Payback
             event.removePaybacksObject(payback)
-            managedContext.deleteObject(payback)
+            managedContext.delete(payback)
         }
         do {
             try managedContext.save()

@@ -24,7 +24,7 @@ class EventDetailsViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nameTextField.becomeFirstResponder()
         peopleLabelField.text = String(self.event!.getNumberOfPeople())
@@ -37,39 +37,39 @@ class EventDetailsViewController: UITableViewController {
     
     // MARK: - Table
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).section == 0 {
             nameTextField.becomeFirstResponder()
-        } else if indexPath.section == 1 {
-            self.performSegueWithIdentifier("viewPeopleSegue", sender: self)
+        } else if (indexPath as NSIndexPath).section == 1 {
+            self.performSegue(withIdentifier: "viewPeopleSegue", sender: self)
         }
     }
     
     // MARK: - Actions
     
-    @IBAction func saveButtonPressed(sender: AnyObject) {
+    @IBAction func saveButtonPressed(_ sender: AnyObject) {
         let name = nameTextField.text!
         if !name.isEmpty {
-            let strippedName = name.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            let strippedName = name.trimmingCharacters(in: CharacterSet.whitespaces)
             event?.name = strippedName
         }
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         do {
             try managedContext.save()
-            performSegueWithIdentifier("saveExitSegue", sender: sender)
+            performSegue(withIdentifier: "saveExitSegue", sender: sender)
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
     }
     
     
-    @IBAction func cancelButtonPressed(sender: AnyObject) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    @IBAction func cancelButtonPressed(_ sender: AnyObject) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         do {
             try managedContext.rollback()
-            performSegueWithIdentifier("cancelExitSegue", sender: sender)
+            performSegue(withIdentifier: "cancelExitSegue", sender: sender)
         } catch let error as NSError  {
             print("Could not rollback \(error), \(error.userInfo)")
         }
@@ -78,10 +78,10 @@ class EventDetailsViewController: UITableViewController {
     
     // MARK: - Navigation
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewPeopleSegue" {
             event?.name = nameTextField.text
-            let destination = segue.destinationViewController as? PeopleViewController
+            let destination = segue.destination as? PeopleViewController
             destination?.event = event
         }
     }

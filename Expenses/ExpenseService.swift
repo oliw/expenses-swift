@@ -19,12 +19,12 @@ class ExpenseService {
         return Singleton.instance
     }
     
-    func initExpense(event: Event) -> Expense {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    func initExpense(_ event: Event) -> Expense {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        let entity = NSEntityDescription.entityForName("Expense", inManagedObjectContext: managedContext)
-        let expense = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Expense
-        expense.date = NSDate()
+        let entity = NSEntityDescription.entity(forEntityName: "Expense", in: managedContext)
+        let expense = NSManagedObject(entity: entity!, insertInto: managedContext) as! Expense
+        expense.date = Date()
         event.addExpensesObject(expense)
         return expense
     }

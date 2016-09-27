@@ -23,7 +23,7 @@ class PeopleViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
@@ -36,25 +36,25 @@ class PeopleViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return event!.getNumberOfPeople() + 1
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row < event!.getNumberOfPeople() {
-            let cell = tableView.dequeueReusableCellWithIdentifier("peopleCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath as NSIndexPath).row < event!.getNumberOfPeople() {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
             
-            let person = event!.getPeople()[indexPath.row]
+            let person = event!.getPeople()[(indexPath as NSIndexPath).row]
             cell.textLabel?.text = person.name
             
             return cell
         } else {
-            return tableView.dequeueReusableCellWithIdentifier("addPeopleCell", forIndexPath: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: "addPeopleCell", for: indexPath)
         }
     }
     
@@ -68,18 +68,18 @@ class PeopleViewController: UITableViewController {
     */
 
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            let person = self.event!.getPeople()[indexPath.row]
+            let person = self.event!.getPeople()[(indexPath as NSIndexPath).row]
             self.event?.removePeopleObject(person)
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
-            managedContext.deleteObject(person)
+            managedContext.delete(person)
             do {
                 try managedContext.save()
             } catch _ {}
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
@@ -102,18 +102,18 @@ class PeopleViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "addPersonSegue" {
-            let navigationRootController = segue.destinationViewController as! UINavigationController
+            let navigationRootController = segue.destination as! UINavigationController
             let addPersonController = navigationRootController.topViewController as! AddPeopleViewController
             addPersonController.event = self.event
         }
         
     }
     
-    @IBAction func prepareForAddPeopleUnwind(segue: UIStoryboardSegue) {
+    @IBAction func prepareForAddPeopleUnwind(_ segue: UIStoryboardSegue) {
         if segue.identifier == "doneExitSegue" {
             tableView.reloadData()
         }

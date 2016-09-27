@@ -20,11 +20,11 @@ class EventService {
     }
     
     func getEvents() -> [Event] {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Event")
+        let fetchRequest = Event.fetchRequest()
         do {
-            let results = try managedContext.executeFetchRequest(fetchRequest)
+            let results = try managedContext.fetch(fetchRequest)
             return results as! [Event]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
@@ -32,10 +32,10 @@ class EventService {
         return []
     }
     
-    func deleteEvent(event:Event) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    func deleteEvent(_ event:Event) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        managedContext.deleteObject(event)
+        managedContext.delete(event)
         do {
             try managedContext.save()
         } catch let error as NSError {

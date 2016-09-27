@@ -14,57 +14,36 @@ class SettlementsViewController: UITableViewController {
     var event:Event?
     var settlementRecommendations:[SettlementRecommendation]?
     
-    
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.parentViewController?.navigationItem.setRightBarButtonItem(shareButton, animated: animated)
+        self.parent?.navigationItem.setRightBarButton(shareButton, animated: animated)
         
         // TODO - Is this the right way to do this?
         let parentTabController = self.tabBarController! as! EventViewController
         event = parentTabController.event
         
         let settlementService = SettlementService.sharedInstance
-        self.settlementRecommendations = settlementService.getRecommendations(event!)
+        self.settlementRecommendations = settlementService.getRecommendations(for: event!)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func displayShareSheet(shareContent:String) {
+    func displayShareSheet(_ shareContent:String) {
         let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
-        presentViewController(activityViewController, animated: true, completion: {})
+        present(activityViewController, animated: true, completion: {})
     }
     
-    func makePayment(settlementRecommendation:SettlementRecommendation) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    func makePayment(_ settlementRecommendation:SettlementRecommendation) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        let entity = NSEntityDescription.entityForName("Payback", inManagedObjectContext: managedContext)
-        let newPayback = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Payback
+        let entity = NSEntityDescription.entity(forEntityName: "Payback", in: managedContext)
+        let newPayback = NSManagedObject(entity: entity!, insertInto: managedContext) as! Payback
         newPayback.sender = settlementRecommendation.from
         newPayback.receiver = settlementRecommendation.to
-        newPayback.amount_integer_part = settlementRecommendation.amount.integerPart()
-        newPayback.amount_decimal_part = settlementRecommendation.amount.decimalPart()
-        newPayback.paid_back_at = NSDate()
+        newPayback.amount_integer_part = settlementRecommendation.amount.integerPart() as NSNumber?
+        newPayback.amount_decimal_part = settlementRecommendation.amount.decimalPart() as NSNumber?
+        newPayback.paid_back_at = Date()
         self.event?.addPaybacksObject(newPayback)
         do {
             try managedContext.save()
@@ -72,35 +51,35 @@ class SettlementsViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func displayActionSheet(settlementRecommendation:SettlementRecommendation) {
-        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-        let markPaidAction = UIAlertAction(title: "Mark Paid", style: .Default, handler: {
+    func displayActionSheet(_ settlementRecommendation:SettlementRecommendation) {
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let markPaidAction = UIAlertAction(title: "Mark Paid", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.makePayment(settlementRecommendation)
         })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
             (alert: UIAlertAction!) -> Void in
         })
         optionMenu.addAction(markPaidAction)
         optionMenu.addAction(cancelAction)
-        self.presentViewController(optionMenu, animated: true, completion: nil)
+        self.present(optionMenu, animated: true, completion: nil)
     }
 
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settlementRecommendations!.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("settlementRecommendationCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "settlementRecommendationCell", for: indexPath)
 
-        let recommendation = settlementRecommendations![indexPath.row]
+        let recommendation = settlementRecommendations![(indexPath as NSIndexPath).row]
         let from = recommendation.from.name!
         let to = recommendation.to.name!
         let amount = recommendation.amount
@@ -108,8 +87,8 @@ class SettlementsViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let settlementRecommendation = self.settlementRecommendations![indexPath.row]
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let settlementRecommendation = self.settlementRecommendations![(indexPath as NSIndexPath).row]
         displayActionSheet(settlementRecommendation)
     }
 
@@ -158,7 +137,7 @@ class SettlementsViewController: UITableViewController {
     }
     */
     
-    @IBAction func shareButtonClicked(sender: AnyObject) {
+    @IBAction func shareButtonClicked(_ sender: AnyObject) {
         displayShareSheet("Hello")
     }
 

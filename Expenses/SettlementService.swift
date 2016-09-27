@@ -17,7 +17,7 @@ class SettlementService {
         return Singleton.instance
     }
     
-    func getRecommendations(event: Event) -> [SettlementRecommendation] {
+    func getRecommendations(for event: Event) -> [SettlementRecommendation] {
         let expenses = event.getExpenses()
         let people = event.getPeople()
         
@@ -61,12 +61,12 @@ class SettlementService {
         return recommendations
     }
     
-    private class BalanceSheet {
+    fileprivate class BalanceSheet {
         var amounts: [Amount]
         var people: [Person]
         
         init(people:[Person]) {
-            self.amounts = [Amount](count: people.count, repeatedValue: Amount.zero())
+            self.amounts = [Amount](repeating: Amount.zero(), count: people.count)
             self.people = people
         }
         
@@ -107,13 +107,13 @@ class SettlementService {
             return BalanceSheetEntry(person: smallestPerson, amount: smallestAmount)
         }
         
-        func addAmountToPerson(amount:Amount, person:Person) {
-            let index = self.people.indexOf(person)!
+        func addAmountToPerson(_ amount:Amount, person:Person) {
+            let index = self.people.index(of: person)!
             amounts[index] = amounts[index] + amount
         }
         
-        func decrAmountFromPerson(amount:Amount, person:Person) {
-            let index = self.people.indexOf(person)!
+        func decrAmountFromPerson(_ amount:Amount, person:Person) {
+            let index = self.people.index(of: person)!
             amounts[index] = amounts[index] - amount
         }
     }

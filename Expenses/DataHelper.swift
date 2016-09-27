@@ -21,22 +21,22 @@ class DataHelper {
         seedMexicoEvent()
     }
     
-    private func seedMexicoEvent() {
+    fileprivate func seedMexicoEvent() {
         // 1. Mexico Event
-        let newEvent = NSEntityDescription.insertNewObjectForEntityForName("Event", inManagedObjectContext: context) as! Event
+        let newEvent = NSEntityDescription.insertNewObject(forEntityName: "Event", into: context) as! Event
         newEvent.name = "Mexico"
         // 2. Mexico People
-        let oli = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: context) as! Person
+        let oli = NSEntityDescription.insertNewObject(forEntityName: "Person", into: context) as! Person
         oli.name = "Oli"
-        let liz = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: context) as! Person
+        let liz = NSEntityDescription.insertNewObject(forEntityName: "Person", into: context) as! Person
         liz.name = "Liz"
-        let bogdan = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: context) as! Person
+        let bogdan = NSEntityDescription.insertNewObject(forEntityName: "Person", into: context) as! Person
         bogdan.name = "Bogdan"
         newEvent.addPeopleObject(oli)
         newEvent.addPeopleObject(liz)
         newEvent.addPeopleObject(bogdan)
         // 3. Oli spent $10 on Oli, Liz and Bogdan
-        let newExpense = NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: context) as! Expense
+        let newExpense = NSEntityDescription.insertNewObject(forEntityName: "Expense", into: context) as! Expense
         newExpense.details = "Water Taxi Ticket"
         newExpense.date = DateHelper.fromIso8601("2016-08-27T22:54:57+00:00")
         newExpense.payer = oli
@@ -47,7 +47,7 @@ class DataHelper {
         newExpense.amount_fraction_part = 0
         newEvent.addExpensesObject(newExpense)
         // 4. Liz spent $20 on Oli, Liz and Bogdan
-        let newExpense2 = NSEntityDescription.insertNewObjectForEntityForName("Expense", inManagedObjectContext: context) as! Expense
+        let newExpense2 = NSEntityDescription.insertNewObject(forEntityName: "Expense", into: context) as! Expense
         newExpense2.details = "Groceries"
         newExpense2.date = DateHelper.fromIso8601("2016-08-27T22:55:57+00:00")
         newExpense2.payer = liz
@@ -58,7 +58,7 @@ class DataHelper {
         newExpense2.amount_fraction_part = 0
         newEvent.addExpensesObject(newExpense2)
         // 5. Bodgan paid $10 Oli
-        let newPayback = NSEntityDescription.insertNewObjectForEntityForName("Payback", inManagedObjectContext: context) as! Payback
+        let newPayback = NSEntityDescription.insertNewObject(forEntityName: "Payback", into: context) as! Payback
         newPayback.receiver = oli
         newPayback.sender = bogdan
         newPayback.amount_integer_part = 10

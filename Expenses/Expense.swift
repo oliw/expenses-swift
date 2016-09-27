@@ -12,10 +12,10 @@ import CoreData
 
 class Expense: NSManagedObject, ActivityItem {
 
-    let activityType: ActivityItemType = .Expense
+    let activityType: ActivityItemType = .expense
     
-    func getDate() -> NSDate {
-        return self.date!
+    func getDate() -> Date {
+        return self.date! as Date
     }
     
     func getNumberOfParticipants() -> Int {
@@ -32,16 +32,16 @@ class Expense: NSManagedObject, ActivityItem {
         return Amount(integerPart: integerPart, decimalPart: decimalPart)
     }
     
-    @NSManaged func addParticipants(value:Set<Person>)
-    @NSManaged func addParticipantsObject(value:Person)
-    @NSManaged func removeParticipantsObject(value:Person)
+    @NSManaged func addParticipants(_ value:Set<Person>)
+    @NSManaged func addParticipantsObject(_ value:Person)
+    @NSManaged func removeParticipantsObject(_ value:Person)
     
-    func replaceParticipants(people:[Person]) -> Void {
-        self.mutableSetValueForKey("participants").removeAllObjects()
+    func replaceParticipants(_ people:[Person]) -> Void {
+        self.mutableSetValue(forKey: "participants").removeAllObjects()
         addParticipants(Set(people))
     }
     
-    func getAmountOwedFor(person: Person) -> Amount {
+    func getAmountOwedFor(_ person: Person) -> Amount {
         let amount = getAmount()
         let participants = getParticipants()
         let n = getNumberOfParticipants()
@@ -52,7 +52,7 @@ class Expense: NSManagedObject, ActivityItem {
         
         
         if participants.contains(person) {
-            let index = participants.indexOf(person)!
+            let index = participants.index(of: person)!
             if (index < extras) {
                 return baseAmount + Amount.smallestAmount()
             } else {

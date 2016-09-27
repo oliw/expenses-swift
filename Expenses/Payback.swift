@@ -12,10 +12,10 @@ import CoreData
 
 class Payback: NSManagedObject, ActivityItem {
 
-    let activityType: ActivityItemType = .Payback
+    let activityType: ActivityItemType = .payback
     
-    func getDate() -> NSDate {
-        return self.paid_back_at!
+    func getDate() -> Date {
+        return self.paid_back_at! as Date
     }
 
     func getAmount() -> Amount {

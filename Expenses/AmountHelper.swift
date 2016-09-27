@@ -9,7 +9,7 @@
 import Foundation
 
 class AmountHelper {
-    static func prettyAmount(amount:Amount) -> String {
+    static func prettyAmount(_ amount:Amount) -> String {
         var result = "$"
         result += String(amount.integerPart())
         result += "."

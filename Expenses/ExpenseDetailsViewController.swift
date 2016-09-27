@@ -27,10 +27,10 @@ class ExpenseDetailsViewController: UITableViewController {
         whenLabel.text = DateHelper.prettyDate((expense?.date!)!)
         participantsLabel.text = expense?.getParticipants().map({(person: Person) -> String in
             return person.name!
-        }).joinWithSeparator(", ")
+        }).joined(separator: ", ")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 

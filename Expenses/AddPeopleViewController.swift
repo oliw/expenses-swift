@@ -15,12 +15,12 @@ class AddPeopleViewController: UITableViewController, CNContactPickerDelegate {
     
     @IBOutlet weak var textField: UITextField!
     
-    @IBAction func onSaveButtonPress(sender: AnyObject) {
-        let name = textField.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    @IBAction func onSaveButtonPress(_ sender: AnyObject) {
+        let name = textField.text?.trimmingCharacters(in: CharacterSet.whitespaces)
         if name != nil && !name!.isEmpty {
             PersonService.sharedInstance.createPerson(name!, event: event!)
         }
-        performSegueWithIdentifier("doneExitSegue", sender: sender)
+        performSegue(withIdentifier: "doneExitSegue", sender: sender)
     }
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class AddPeopleViewController: UITableViewController, CNContactPickerDelegate {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         textField.becomeFirstResponder()
     }
@@ -40,15 +40,15 @@ class AddPeopleViewController: UITableViewController, CNContactPickerDelegate {
     
     // MARK: - Contact Picker
     
-    @IBAction func showContactPicker(sender: AnyObject) {
+    @IBAction func showContactPicker(_ sender: AnyObject) {
         let contactPickerViewController = CNContactPickerViewController()
         contactPickerViewController.predicateForSelectionOfContact = NSPredicate(value: true)
         contactPickerViewController.predicateForSelectionOfProperty = NSPredicate(value: false)
         contactPickerViewController.delegate = self
-        presentViewController(contactPickerViewController, animated: true, completion: nil)
+        present(contactPickerViewController, animated: true, completion: nil)
     }
     
-    func contactPicker(picker: CNContactPickerViewController, didSelectContact contact: CNContact) {
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         var personName = contact.givenName
         if contact.familyName != "" {
             personName += " " + contact.familyName
@@ -69,7 +69,7 @@ class AddPeopleViewController: UITableViewController, CNContactPickerDelegate {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

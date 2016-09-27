@@ -19,11 +19,11 @@ class PersonService {
         return Singleton.instance
     }
     
-    func createPerson(name: String, event: Event) -> Person {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    func createPerson(_ name: String, event: Event) -> Person {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedContext)
-        let newPerson = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext) as! Person
+        let entity = NSEntityDescription.entity(forEntityName: "Person", in: managedContext)
+        let newPerson = NSManagedObject(entity: entity!, insertInto: managedContext) as! Person
         newPerson.name = name
         event.addPeopleObject(newPerson)
         return newPerson

@@ -16,7 +16,7 @@ extension Payback {
 
     @NSManaged var amount_integer_part: NSNumber?
     @NSManaged var amount_decimal_part: NSNumber?
-    @NSManaged var paid_back_at: NSDate?
+    @NSManaged var paid_back_at: Date?
     @NSManaged var sender: Person?
     @NSManaged var receiver: Person?
 
