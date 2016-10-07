@@ -51,7 +51,7 @@
 /* Begin PBXFileReference section */
 		2219A5ED1D5FD8C20097B6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		221F11EB1D8261CE005E9967 /* AddPeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPeopleViewController.swift; path = Expenses/AddPeopleViewController.swift; sourceTree = SOURCE_ROOT; };
-		2274FDA71D431A83006BFCAE /* Expenses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenses.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2274FDA71D431A83006BFCAE /* Even Steven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Even Steven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274FDAA1D431A83006BFCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2274FDB21D431A83006BFCAE /* Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expenses.xcdatamodel; sourceTree = "<group>"; };
 		2274FDB41D431A83006BFCAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		2274FDA81D431A83006BFCAE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2274FDA71D431A83006BFCAE /* Expenses.app */,
+				2274FDA71D431A83006BFCAE /* Even Steven.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,9 +225,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2274FDA61D431A83006BFCAE /* Expenses */ = {
+		2274FDA61D431A83006BFCAE /* Even Steven */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2274FDBC1D431A83006BFCAE /* Build configuration list for PBXNativeTarget "Expenses" */;
+			buildConfigurationList = 2274FDBC1D431A83006BFCAE /* Build configuration list for PBXNativeTarget "Even Steven" */;
 			buildPhases = (
 				2274FDA31D431A83006BFCAE /* Sources */,
 				2274FDA41D431A83006BFCAE /* Frameworks */,
@@ -237,9 +237,9 @@
 			);
 			dependencies = (
 			);
-			name = Expenses;
+			name = "Even Steven";
 			productName = Expenses;
-			productReference = 2274FDA71D431A83006BFCAE /* Expenses.app */;
+			productReference = 2274FDA71D431A83006BFCAE /* Even Steven.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -259,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2274FDA21D431A83006BFCAE /* Build configuration list for PBXProject "Expenses" */;
+			buildConfigurationList = 2274FDA21D431A83006BFCAE /* Build configuration list for PBXProject "Even Steven" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -272,7 +272,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2274FDA61D431A83006BFCAE /* Expenses */,
+				2274FDA61D431A83006BFCAE /* Even Steven */,
 			);
 		};
 /* End PBXProject section */
@@ -479,7 +479,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2274FDA21D431A83006BFCAE /* Build configuration list for PBXProject "Expenses" */ = {
+		2274FDA21D431A83006BFCAE /* Build configuration list for PBXProject "Even Steven" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2274FDBA1D431A83006BFCAE /* Debug */,
@@ -488,7 +488,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2274FDBC1D431A83006BFCAE /* Build configuration list for PBXNativeTarget "Expenses" */ = {
+		2274FDBC1D431A83006BFCAE /* Build configuration list for PBXNativeTarget "Even Steven" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2274FDBD1D431A83006BFCAE /* Debug */,
