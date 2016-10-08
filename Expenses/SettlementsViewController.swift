@@ -13,6 +13,7 @@ class SettlementsViewController: UITableViewController {
     
     var event:Event?
     var settlementRecommendations:[SettlementRecommendation]?
+    let settlementService = SettlementService.sharedInstance
     
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
@@ -25,8 +26,8 @@ class SettlementsViewController: UITableViewController {
         let parentTabController = self.tabBarController! as! EventViewController
         event = parentTabController.event
         
-        let settlementService = SettlementService.sharedInstance
         self.settlementRecommendations = settlementService.getRecommendations(for: event!)
+        tableView.reloadData()
     }
     
     func displayShareSheet(_ shareContent:String) {
