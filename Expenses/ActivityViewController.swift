@@ -22,14 +22,13 @@ class ActivityViewController: UITableViewController {
     
         let parentTabController = self.tabBarController! as! EventViewController
         event = parentTabController.event
-        
-        refreshActivityFeed()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.parent?.navigationItem.setRightBarButton(addButton, animated: animated)
+        refreshActivityFeed()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

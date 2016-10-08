@@ -21,11 +21,13 @@ class SettlementsViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         self.parent?.navigationItem.setRightBarButton(shareButton, animated: animated)
-        
-        // TODO - Is this the right way to do this?
         let parentTabController = self.tabBarController! as! EventViewController
-        event = parentTabController.event
         
+        event = parentTabController.event
+        refreshRecommendations()
+    }
+    
+    func refreshRecommendations() {
         self.settlementRecommendations = settlementService.getRecommendations(for: event!)
         tableView.reloadData()
     }
@@ -49,7 +51,7 @@ class SettlementsViewController: UITableViewController {
         do {
             try managedContext.save()
         } catch _ {}
-        self.tableView.reloadData()
+        refreshRecommendations()
     }
     
     func displayActionSheet(_ settlementRecommendation:SettlementRecommendation) {
