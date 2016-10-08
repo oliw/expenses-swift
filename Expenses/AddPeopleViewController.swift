@@ -34,7 +34,6 @@ class AddPeopleViewController: UITableViewController, CNContactPickerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        textField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
