@@ -350,7 +350,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
-                            <tableViewSection id="WrY-c1-XSV">
+                            <tableViewSection footerTitle="" id="WrY-c1-XSV">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="A2O-2L-ch7">
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
@@ -359,13 +359,17 @@
                                             <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qdb-s2-T8Z">
-                                                    <frame key="frameInset" minX="15" width="297" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qdb-s2-T8Z">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qdb-s2-T8Z" firstAttribute="leading" secondItem="oUv-6f-ejL" secondAttribute="leadingMargin" constant="8" id="aYJ-nC-8yx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qdb-s2-T8Z" secondAttribute="trailing" constant="8" id="jiS-wr-cuI"/>
+                                                <constraint firstItem="qdb-s2-T8Z" firstAttribute="centerY" secondItem="oUv-6f-ejL" secondAttribute="centerY" id="m06-gT-dnP"/>
+                                                <constraint firstItem="qdb-s2-T8Z" firstAttribute="top" secondItem="oUv-6f-ejL" secondAttribute="top" id="nDh-6e-UeD"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -395,6 +399,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -427,7 +434,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYj-Sb-Ecq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wHU-c6-JK2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="305"/>
+            <point key="canvasLocation" x="2613.5999999999999" y="303.59820089955025"/>
         </scene>
         <!--People-->
         <scene sceneID="zZG-I5-4CH">
@@ -486,7 +493,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKN-dA-hkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2845" y="298"/>
+            <point key="canvasLocation" x="3394" y="290"/>
         </scene>
         <!--Events-->
         <scene sceneID="zkE-PU-kFe">

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2219A5EE1D5FD8C20097B6E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219A5EC1D5FD8C20097B6E4 /* Main.storyboard */; };
 		221F11EC1D8261CE005E9967 /* AddPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F11EB1D8261CE005E9967 /* AddPeopleViewController.swift */; };
+		222E49EC1DA89F8500F81DBB /* Even_Steven_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E49EB1DA89F8500F81DBB /* Even_Steven_UITests.swift */; };
 		2274FDAB1D431A83006BFCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDAA1D431A83006BFCAE /* AppDelegate.swift */; };
 		2274FDB31D431A83006BFCAE /* Expenses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2274FDB11D431A83006BFCAE /* Expenses.xcdatamodeld */; };
 		2274FDB51D431A83006BFCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2274FDB41D431A83006BFCAE /* Assets.xcassets */; };
@@ -48,9 +49,22 @@
 		22F8A6791D85FB0700030319 /* ExpenseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F8A6781D85FB0700030319 /* ExpenseService.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		222E49EE1DA89F8500F81DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2274FD9F1D431A83006BFCAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2274FDA61D431A83006BFCAE;
+			remoteInfo = "Even Steven";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2219A5ED1D5FD8C20097B6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		221F11EB1D8261CE005E9967 /* AddPeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPeopleViewController.swift; path = Expenses/AddPeopleViewController.swift; sourceTree = SOURCE_ROOT; };
+		222E49E91DA89F8500F81DBB /* Even Steven UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Even Steven UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		222E49EB1DA89F8500F81DBB /* Even_Steven_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Even_Steven_UITests.swift; sourceTree = "<group>"; };
+		222E49ED1DA89F8500F81DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2274FDA71D431A83006BFCAE /* Even Steven.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Even Steven.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2274FDAA1D431A83006BFCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2274FDB21D431A83006BFCAE /* Expenses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Expenses.xcdatamodel; sourceTree = "<group>"; };
@@ -93,6 +107,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		222E49E61DA89F8500F81DBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2274FDA41D431A83006BFCAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222E49EA1DA89F8500F81DBB /* Even Steven UITests */ = {
+			isa = PBXGroup;
+			children = (
+				222E49EB1DA89F8500F81DBB /* Even_Steven_UITests.swift */,
+				222E49ED1DA89F8500F81DBB /* Info.plist */,
+			);
+			path = "Even Steven UITests";
+			sourceTree = "<group>";
+		};
 		22511FDE1D65616F00E07886 /* NewExpense */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				2274FDA91D431A83006BFCAE /* Expenses */,
+				222E49EA1DA89F8500F81DBB /* Even Steven UITests */,
 				2274FDA81D431A83006BFCAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				2274FDA71D431A83006BFCAE /* Even Steven.app */,
+				222E49E91DA89F8500F81DBB /* Even Steven UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,6 +257,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		222E49E81DA89F8500F81DBB /* Even Steven UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 222E49F01DA89F8500F81DBB /* Build configuration list for PBXNativeTarget "Even Steven UITests" */;
+			buildPhases = (
+				222E49E51DA89F8500F81DBB /* Sources */,
+				222E49E61DA89F8500F81DBB /* Frameworks */,
+				222E49E71DA89F8500F81DBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				222E49EF1DA89F8500F81DBB /* PBXTargetDependency */,
+			);
+			name = "Even Steven UITests";
+			productName = "Even Steven UITests";
+			productReference = 222E49E91DA89F8500F81DBB /* Even Steven UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		2274FDA61D431A83006BFCAE /* Even Steven */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2274FDBC1D431A83006BFCAE /* Build configuration list for PBXNativeTarget "Even Steven" */;
@@ -248,10 +298,15 @@
 		2274FD9F1D431A83006BFCAE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Oliver Wilkie";
 				TargetAttributes = {
+					222E49E81DA89F8500F81DBB = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2274FDA61D431A83006BFCAE;
+					};
 					2274FDA61D431A83006BFCAE = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 73JD7Z7FT4;
@@ -273,11 +328,19 @@
 			projectRoot = "";
 			targets = (
 				2274FDA61D431A83006BFCAE /* Even Steven */,
+				222E49E81DA89F8500F81DBB /* Even Steven UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		222E49E71DA89F8500F81DBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2274FDA51D431A83006BFCAE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,6 +354,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		222E49E51DA89F8500F81DBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222E49EC1DA89F8500F81DBB /* Even_Steven_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2274FDA31D431A83006BFCAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +407,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		222E49EF1DA89F8500F81DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2274FDA61D431A83006BFCAE /* Even Steven */;
+			targetProxy = 222E49EE1DA89F8500F81DBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		2219A5EC1D5FD8C20097B6E4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -356,6 +435,35 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		222E49F11DA89F8500F81DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = "Even Steven UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverwilkie.Even-Steven-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Even Steven";
+			};
+			name = Debug;
+		};
+		222E49F21DA89F8500F81DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = "Even Steven UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverwilkie.Even-Steven-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Even Steven";
+			};
+			name = Release;
+		};
 		2274FDBA1D431A83006BFCAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -479,6 +587,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		222E49F01DA89F8500F81DBB /* Build configuration list for PBXNativeTarget "Even Steven UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				222E49F11DA89F8500F81DBB /* Debug */,
+				222E49F21DA89F8500F81DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2274FDA21D431A83006BFCAE /* Build configuration list for PBXProject "Even Steven" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
