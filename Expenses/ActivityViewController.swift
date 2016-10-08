@@ -20,25 +20,18 @@ class ActivityViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.parent?.navigationItem.setRightBarButton(addButton, animated: animated)
-        
-        // TODO - Is this the right way to do this?
         let parentTabController = self.tabBarController! as! EventViewController
         event = parentTabController.event
         
         let activityService = ActivityService.sharedInstance
         self.activity = activityService.getActivity(event!)
         tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.parent?.navigationItem.setRightBarButton(addButton, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -18,9 +18,13 @@ class AddPeopleViewController: UITableViewController, CNContactPickerDelegate {
     @IBAction func onSaveButtonPress(_ sender: AnyObject) {
         let name = textField.text?.trimmingCharacters(in: CharacterSet.whitespaces)
         if name != nil && !name!.isEmpty {
-            PersonService.sharedInstance.createPerson(name!, event: event!)
+            savePerson(name: name!)
         }
         performSegue(withIdentifier: "doneExitSegue", sender: sender)
+    }
+    
+    func savePerson(name: String) {
+        PersonService.sharedInstance.createPerson(name, event: event!)
     }
     
     override func viewDidLoad() {
@@ -52,8 +56,9 @@ class AddPeopleViewController: UITableViewController, CNContactPickerDelegate {
         var personName = contact.givenName
         if contact.familyName != "" {
             personName += " " + contact.familyName
+            savePerson(name: personName)
         }
-        textField.text = personName
+        performSegue(withIdentifier: "doneExitSegue", sender: nil)
     }
     
     // MARK: - Table
