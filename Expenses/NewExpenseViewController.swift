@@ -15,6 +15,7 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     
     var amountFractional:Int?
     var amountInteger = 0
+    
     let maxAmountCents = 10000000
     var datePickerHidden = true
         
@@ -38,12 +39,6 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
         peopleDetailField.text = "\(expense!.getNumberOfParticipants())"
         datePicker.date = expense!.date! as Date
         datePickerChanged()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,11 +108,11 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
         default:
             return false
         }
-        setAmountField(amountInteger, amountFractional: amountFractional)
+        setAmountField(integer: amountInteger, and: amountFractional)
         return false
     }
     
-    func setAmountField(_ amountInteger: Int, amountFractional: Int?) {
+    func setAmountField(integer: Int,and fraction: Int?) {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: "en_US")
@@ -160,8 +155,13 @@ class NewExpenseViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func saveButtonPressed(_ sender: AnyObject) {
         expense?.details = descriptionTextField.text
-        expense?.amount_integer_part = amountInteger as NSNumber?
-        expense?.amount_fraction_part = amountFractional as NSNumber?
+        expense?.amount_integer_part = NSNumber(integerLiteral: amountInteger)
+        if let inputFractional = amountFractional {
+            expense?.amount_fraction_part = NSNumber(integerLiteral: inputFractional)
+        } else {
+            expense?.amount_fraction_part = NSNumber(integerLiteral: 0)
+        }
+
         expense?.date = datePicker.date
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

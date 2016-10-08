@@ -12,8 +12,8 @@ import CoreData
 class ActivityViewController: UITableViewController {
     
     var event:Event?
-    var activity:Activity?
-
+    let activityService = ActivityService.sharedInstance
+    var activity: Activity?
 
     @IBOutlet var addButton: UIBarButtonItem!
 
@@ -23,9 +23,7 @@ class ActivityViewController: UITableViewController {
         let parentTabController = self.tabBarController! as! EventViewController
         event = parentTabController.event
         
-        let activityService = ActivityService.sharedInstance
-        self.activity = activityService.getActivity(event!)
-        tableView.reloadData()
+        refreshActivityFeed()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +39,11 @@ class ActivityViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refreshActivityFeed() {
+        activity = activityService.getActivity(event!)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -58,7 +61,10 @@ class ActivityViewController: UITableViewController {
         if activityItem.activityType == .expense {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentCell", for: indexPath)
             let expense = activityItem as! Expense
-            cell.textLabel?.text = expense.details
+            let fromName = expense.payer!.name!
+            let amount = AmountHelper.prettyAmount(expense.amount)
+            let details = expense.details!
+            cell.textLabel?.text = "\(fromName) \(amount) on \(details)"
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PaybackCell", for: indexPath)
@@ -66,7 +72,7 @@ class ActivityViewController: UITableViewController {
             let fromName = payback.sender!.name!
             let toName = payback.receiver!.name!
             let amount = AmountHelper.prettyAmount(payback.getAmount())
-            cell.textLabel?.text = "\(fromName) gave \(toName) \(amount)"
+            cell.textLabel?.text = "\(fromName) \(amount) to \(toName)"
             return cell
         }
     }
@@ -94,7 +100,6 @@ class ActivityViewController: UITableViewController {
                 // Delete the row from the data source
                 let activityItem = self.activity!.getItem((indexPath as NSIndexPath).row)
                 ActivityService.sharedInstance.deleteActivityItem(activityItem, event: self.event!)
-                self.activity = ActivityService.sharedInstance.getActivity(self.event!)
                 tableView.reloadData()
             }
             alert.addAction(firstAction)
@@ -142,7 +147,7 @@ class ActivityViewController: UITableViewController {
     
     @IBAction func returnToActivityView(_ segue:UIStoryboardSegue) {
         if segue.identifier == "saveExitSegue" {
-            self.tableView.reloadData()
+            refreshActivityFeed()
         }
     }
 }

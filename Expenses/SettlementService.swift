@@ -18,8 +18,9 @@ class SettlementService {
     }
     
     func getRecommendations(for event: Event) -> [SettlementRecommendation] {
-        let expenses = event.getExpenses()
-        let people = event.getPeople()
+        let people = event.getPeople().sorted(by: { $0.name! > $1.name! })
+        let expenses = event.getExpenses().sorted(by: { $0.getDate() > $1.getDate() })
+        let paybacks = event.getPaybacks().sorted(by: { $0.getDate() > $1.getDate() })
         
         // init balance sheet
         let balanceSheet = BalanceSheet(people: people)
@@ -27,13 +28,20 @@ class SettlementService {
         // fill balance sheet
         for expense in expenses {
             let payer = expense.payer!
-            let paidAmount = expense.getAmount()
-            balanceSheet.addAmountToPerson(paidAmount, person: payer)
+            let paidAmount = expense.amount
+            balanceSheet.add(amount: paidAmount,to: payer)
             
-            for participant in expense.getParticipants() {
-                let owedAmount = expense.getAmountOwedFor(participant)
-                balanceSheet.decrAmountFromPerson(owedAmount, person: participant)
+            for participant in expense.participants! {
+                let owedAmount = expense.amountOwed(by: participant)
+                balanceSheet.remove(amount: owedAmount, from: participant)
             }
+        }
+        for payback in paybacks {
+            let payer = payback.sender!
+            let receiver = payback.receiver!
+            let paidAmount = payback.getAmount()
+            balanceSheet.add(amount: paidAmount, to: payer)
+            balanceSheet.remove(amount: paidAmount, from: receiver)
         }
         
         // create recommendations
@@ -54,8 +62,8 @@ class SettlementService {
             }
             let recommendation = SettlementRecommendation(from: poorest.person, to: richest.person, amount: amountToPay)
             recommendations.append(recommendation)
-            balanceSheet.decrAmountFromPerson(amountToPay, person: richest.person)
-            balanceSheet.addAmountToPerson(amountToPay, person: poorest.person)
+            balanceSheet.remove(amount: amountToPay, from: richest.person)
+            balanceSheet.add(amount: amountToPay, to: poorest.person)
         }
         
         return recommendations
@@ -107,12 +115,12 @@ class SettlementService {
             return BalanceSheetEntry(person: smallestPerson, amount: smallestAmount)
         }
         
-        func addAmountToPerson(_ amount:Amount, person:Person) {
+        func add(amount:Amount,to person:Person) {
             let index = self.people.index(of: person)!
             amounts[index] = amounts[index] + amount
         }
         
-        func decrAmountFromPerson(_ amount:Amount, person:Person) {
+        func remove(amount:Amount,from person:Person) {
             let index = self.people.index(of: person)!
             amounts[index] = amounts[index] - amount
         }

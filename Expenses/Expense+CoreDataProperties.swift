@@ -18,7 +18,7 @@ extension Expense {
     @NSManaged var amount_integer_part: NSNumber?
     @NSManaged var date: Date?
     @NSManaged var details: String?
-    @NSManaged var participants: NSSet?
+    @NSManaged var participants: [Person]?
     @NSManaged var payer: Person?
 
 }

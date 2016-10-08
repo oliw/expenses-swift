@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Event" representedClassName=".Event" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="expenses" toMany="YES" deletionRule="Cascade" destinationEntity="Expense" syncable="YES"/>
-        <relationship name="paybacks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Payback" syncable="YES"/>
-        <relationship name="people" toMany="YES" deletionRule="Cascade" destinationEntity="Person" syncable="YES"/>
+        <relationship name="expenses" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Expense" syncable="YES"/>
+        <relationship name="paybacks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Payback" syncable="YES"/>
+        <relationship name="people" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Expense" representedClassName=".Expense" syncable="YES">
-        <attribute name="amount_fraction_part" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="amount_integer_part" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="amount_fraction_part" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="amount_integer_part" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="participants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
+        <relationship name="participants" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Person" syncable="YES"/>
         <relationship name="payer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Payback" representedClassName=".Payback" syncable="YES">
-        <attribute name="amount_decimal_part" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="amount_integer_part" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="paid_back_at" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="amount_decimal_part" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="amount_integer_part" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="paid_back_at" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="receiver" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
         <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
     </entity>
@@ -27,7 +27,7 @@
     <elements>
         <element name="Event" positionX="-54" positionY="0" width="128" height="105"/>
         <element name="Expense" positionX="-54" positionY="9" width="128" height="135"/>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="60"/>
         <element name="Payback" positionX="-54" positionY="45" width="128" height="120"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="60"/>
     </elements>
 </model>

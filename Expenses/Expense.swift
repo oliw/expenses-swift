@@ -22,14 +22,16 @@ class Expense: NSManagedObject, ActivityItem {
         return self.participants!.count
     }
     
-    func getParticipants() -> [Person] {
-        return self.participants!.allObjects as! [Person]
-    }
-    
-    func getAmount() -> Amount {
-        let integerPart = self.amount_integer_part! as Int
-        let decimalPart = self.amount_fraction_part! as Int
-        return Amount(integerPart: integerPart, decimalPart: decimalPart)
+    var amount: Amount {
+        get {
+            let integerPart = self.amount_integer_part! as Int
+            let decimalPart = self.amount_fraction_part! as Int
+            return Amount(integerPart: integerPart, decimalPart: decimalPart)
+        }
+        set(newAmount) {
+            self.amount_integer_part = NSNumber(value: newAmount.integerPart())
+            self.amount_fraction_part = NSNumber(value: newAmount.decimalPart())
+        }
     }
     
     @NSManaged func addParticipants(_ value:Set<Person>)
@@ -41,18 +43,20 @@ class Expense: NSManagedObject, ActivityItem {
         addParticipants(Set(people))
     }
     
-    func getAmountOwedFor(_ person: Person) -> Amount {
-        let amount = getAmount()
-        let participants = getParticipants()
+    func amountOwed(by person: Person) -> Amount {
         let n = getNumberOfParticipants()
         
-        let baseAmount = amount / n
-        let residualAmount = amount % n
+        let baseAmount = amount / n // e.g. $3.23 / 3 = $1.07
+        let residualAmount = amount % n // e.g. $3.23 % 3 = $0.02
         let extras = residualAmount.decimalValue
         
+        if !participants!.contains(person) {
+            return Amount.zero()
+        }
         
-        if participants.contains(person) {
-            let index = participants.index(of: person)!
+        let i = participants!.index(of: person)
+        
+        if let index = i {
             if (index < extras) {
                 return baseAmount + Amount.smallestAmount()
             } else {

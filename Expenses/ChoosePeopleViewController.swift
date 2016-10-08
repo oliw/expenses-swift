@@ -21,7 +21,7 @@ class ChoosePeopleViewController: UITableViewController {
         super.viewDidLoad()
         
         checkedPeople.removeAll()
-        expense?.getParticipants().forEach({person -> Void in
+        expense?.participants!.forEach({person -> Void in
             checkedPeople.append(person)
         })
         checkedPeopleChanged()
@@ -84,7 +84,7 @@ class ChoosePeopleViewController: UITableViewController {
     // MARK: - Action
     
     @IBAction func onDoneButtonPressed(_ sender: AnyObject) {
-        let participants = expense?.getParticipants()
+        let participants = expense?.participants!
         participants?.forEach { expense?.removeParticipantsObject($0) }
         checkedPeople.forEach { expense?.addParticipantsObject($0) }
         

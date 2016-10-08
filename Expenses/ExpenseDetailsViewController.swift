@@ -23,9 +23,9 @@ class ExpenseDetailsViewController: UITableViewController {
         
         payerLabel.text = expense?.payer?.name
         descriptionLabel.text = expense?.details
-        amountLabel.text = AmountHelper.prettyAmount((expense?.getAmount())!)
+        amountLabel.text = AmountHelper.prettyAmount((expense?.amount)!)
         whenLabel.text = DateHelper.prettyDate((expense?.date!)!)
-        participantsLabel.text = expense?.getParticipants().map({(person: Person) -> String in
+        participantsLabel.text = expense?.participants!.map({(person: Person) -> String in
             return person.name!
         }).joined(separator: ", ")
     }
