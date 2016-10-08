@@ -26,7 +26,7 @@ class EventDetailsViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        nameTextField.becomeFirstResponder()
+        //nameTextField.becomeFirstResponder()
         peopleLabelField.text = String(self.event!.getNumberOfPeople())
     }
 
