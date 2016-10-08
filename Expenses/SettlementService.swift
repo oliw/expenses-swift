@@ -39,7 +39,7 @@ class SettlementService {
         for payback in paybacks {
             let payer = payback.sender!
             let receiver = payback.receiver!
-            let paidAmount = payback.getAmount()
+            let paidAmount = payback.amount
             balanceSheet.add(amount: paidAmount, to: payer)
             balanceSheet.remove(amount: paidAmount, from: receiver)
         }

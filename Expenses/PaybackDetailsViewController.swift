@@ -22,7 +22,7 @@ class PaybackDetailsViewController: UITableViewController {
         
         fromLabel.text = payback!.sender?.name
         toLabel.text = payback!.receiver?.name
-        amountLabel.text = AmountHelper.prettyAmount(payback!.getAmount())
+        amountLabel.text = AmountHelper.prettyAmount(payback!.amount)
         whenLabel.text = DateHelper.prettyDate(payback!.getDate())
 
         // Uncomment the following line to preserve selection between presentations

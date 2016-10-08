@@ -17,10 +17,16 @@ class Payback: NSManagedObject, ActivityItem {
     func getDate() -> Date {
         return self.paid_back_at! as Date
     }
-
-    func getAmount() -> Amount {
-        let integerPart = self.amount_integer_part! as Int
-        let decimalPart = self.amount_decimal_part! as Int
-        return Amount(integerPart: integerPart, decimalPart: decimalPart)
+    
+    var amount: Amount {
+        get {
+            let integerPart = self.amount_integer_part! as Int
+            let decimalPart = self.amount_decimal_part! as Int
+            return Amount(integerPart: integerPart, decimalPart: decimalPart)
+        }
+        set(amount) {
+            self.amount_integer_part = amount.integerPart() as NSNumber?
+            self.amount_decimal_part = amount.decimalPart() as NSNumber?
+        }
     }
 }

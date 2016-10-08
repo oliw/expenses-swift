@@ -70,7 +70,7 @@ class ActivityViewController: UITableViewController {
             let payback = activityItem as! Payback
             let fromName = payback.sender!.name!
             let toName = payback.receiver!.name!
-            let amount = AmountHelper.prettyAmount(payback.getAmount())
+            let amount = AmountHelper.prettyAmount(payback.amount)
             cell.textLabel?.text = "\(fromName) \(amount) to \(toName)"
             return cell
         }
