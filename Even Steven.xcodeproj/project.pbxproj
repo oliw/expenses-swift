@@ -309,8 +309,9 @@
 					};
 					2274FDA61D431A83006BFCAE = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 73JD7Z7FT4;
+						DevelopmentTeam = ZZJQXKYB99;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -560,12 +561,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZZJQXKYB99;
 				INFOPLIST_FILE = Expenses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oliverwilkie.Expenses;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverwilkie.even-steven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -575,12 +578,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = ZZJQXKYB99;
 				INFOPLIST_FILE = Expenses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oliverwilkie.Expenses;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oliverwilkie.even-steven";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -594,6 +599,7 @@
 				222E49F21DA89F8500F81DBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2274FDA21D431A83006BFCAE /* Build configuration list for PBXProject "Even Steven" */ = {
 			isa = XCConfigurationList;
